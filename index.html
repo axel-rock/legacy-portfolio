@@ -1,0 +1,49 @@
+---
+---
+
+{% include header.html %}
+
+            <article id="intro" class="box center">
+                <h1>Hi! I'm Axel</h1>
+                <ul class="tag">
+                    <li>Objective-C</li>
+                    <li>JavaScript</li>
+                    <li>Challenge</li>
+                    <li>Travel</li>
+                    <li>Photography</li>
+                </ul>
+                <p>I am a <?php echo $age; ?> year old creative developer and traveller from France.<br/>
+                I now live in Stockholm and work at <a href="http://bannerboy.com" target=_blank>Bannerboy</a>.</p>
+                <p class="center"><a data-scroll href="#contact" alt="contact anchor link" class="action">Get in touch!</a></p>
+            </article>
+                
+            <section>
+                <h1>Take a look at my work</h1>
+
+                {% for post in site.posts %}
+                    {{ post.content }}
+                {% endfor %}
+            </section>
+            
+            <section id="resume" class="box center grey">
+                <h1>My résumé in a nutshell</h1>
+                
+                <h2>Work</h2>
+                <ul class="no-bullet">
+                    <li><b>May 2015 - Today</b><br/>Senior creative developer - <a href="http://bannerboy.com" title="Bannerboy" target="_blank">Bannerboy</a></li>
+                    <li><b>Summer 2014</b><br/>iOS developer - <a href="http://b-i.com" title="Blue Infinity's website" target="_blank">Blue Infinity</a></li>
+                    <li><b>2012-2014</b><br/>Digital designer and producer - <a href="http://laturbine-sciences.fr" title="La Turbine's website" target="_blank">La Turbine</a></li>
+                    <li><b>2011-2012</b><br/>Web and mobile developer - <a href="http://uk.clicandwalk.com/" title="Clic and Walk's website" target="_blank">Clic and Walk / Infuze</a></li>
+                    <li><b>Since 2012</b><br/>Freelance web and mobile developer</li>
+                </ul>
+                
+                <h2>Studies</h2>
+                <ul class="no-bullet">
+                    <li><b>2012-2014</b><br/>Digital design and production - Gobelins (Work/Study program)</li>
+                    <li><b>2010-2012</b><br/>Multimedia and internet degree - Laval's Institute of Technology</li>
+                </ul>
+                
+                <p class="center space"><a href="axelrock.pdf" target="_blank" class="action">PDF Version</a></p>   
+            </section>
+
+{% include footer.html %}
