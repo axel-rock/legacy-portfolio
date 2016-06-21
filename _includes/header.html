@@ -1,12 +1,5 @@
 <!doctype html>
-
-<!--[if IEMobile 7 ]>    <html class="no-js iem7" lang="en"> <![endif]-->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-
-<!--[if gt IE 8]><!--> 
-<html class="no-js" lang="en"> <!--<![endif]-->
+<html class="no-js" lang="en">
   <head>
     <!--  
       Hey you!
@@ -16,8 +9,8 @@
       The least I can do is to offer you more informations. Here are a few things about this website.
       
       * It's SEO friendly
-      * It's build in PHP and HTML5
-      * I admit : I didn't test it on old browsers
+      * It's build with Jekyll and hosted on GitHub Pages
+      * I admit: I didn't test it on old browsers
       * I used LESS for the style
       * I tried to make it fast 
       * I'm glad you're here
@@ -33,6 +26,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
+    <link rel="shortcut icon" href="{{ site.url }}{{ site.baseurl }}img/favicon.ico">
     <!-- Facebook -->
     <meta property="og:title" content="{{ site.title }} / A developer's portfolio">
     <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}">
@@ -108,6 +102,7 @@
         -webkit-margin-before: 0;
         color: #000;
         text-shadow: 1px 1px 10px rgba(255,255,255,.4);
+        font-size: 1.97em;
       }
       
       h1 {

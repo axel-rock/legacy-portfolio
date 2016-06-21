@@ -21,34 +21,33 @@
         <h1>Axel Rock</h1>
         <ul class="no-bullet">
           <li>
+            <a class="no-decoration" target="_blank" title="Follow me on Instagram" href="https://instagram.com/{{ site.contact.instagram }}/">
+              <span class="link">Instagram</span><br/>
+              {{ site.contact.instagram }}
+            </a>
+          </li>
+          <li>
+            <a class="no-decoration" title="Call me" title="phone number" href="tel:{{ site.contact.phone | remove: " " }}">
+              <span class="link">Phone</span><br/>
+              {{ site.contact.phone }}
+            </a>
+          </li>
+          <li>
             <a class="no-decoration" title="Email me" title="email address" href="mailto:{{ site.contact.email }}?subject=Hi%20Axel!&amp;body=Hi%20Axel%20...">
               <span class="link">Email</span><br/>
               {{ site.contact.email }}
             </a>
           </li>
           <li>
-            <a class="no-decoration" title="Call me" title="phone number" href="tel:{{ site.contact.phone | remove: " " }}">
-              <span class="link">Phone</span><br/>
-              {{ site.contact.phone }}<br/>
-              
+            <a class="no-decoration" target="_blank" title="Follow me on Twitter" href="http://twitter.com/{{ site.contact.twitter }}">
+              <span class="link">Twitter</span><br/>
+              @{{ site.contact.twitter }}
             </a>
           </li>
           <li>
             <a class="no-decoration" target="_blank" title="LinkedIn profile" href="http://fr.linkedin.com/in/{{ site.contact.linkedin }}">
               <span class="link">LinkedIn</span><br/>
               Axel Rock
-            </a>
-          </li>
-          <li>
-            <a class="no-decoration" target="_blank" title="Follow me on Twitter" href="http://twitter.com/ {{ site.contact.twitter }}">
-              <span class="link">Twitter</span><br/>
-              @{{ site.contact.twitter }}
-            </a>
-          </li>
-          <li>
-            <a class="no-decoration" target="_blank" title="Follow me on Instagram" href="https://instagram.com/{{ site.contact.instagram }}/">
-              <span class="link">Instagram</span><br/>
-              {{ site.contact.instagram }}
             </a>
           </li>
         </ul>
