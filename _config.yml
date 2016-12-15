@@ -16,10 +16,10 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://rock.bzh" # the base hostname & protocol for your site
 
 contact:
-  email:      axel@rock.bzh
+  email:      rockaxel@gmail.com
   twitter:    nineties_panda
   linkedin:   axelrock
-  phone:      +46 720 386 898
+  phone:      +33 7 60 76 35 67
   instagram:  axel.rock
 
 # Build settings
