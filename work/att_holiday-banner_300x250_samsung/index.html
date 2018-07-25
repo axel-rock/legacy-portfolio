@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="ad.size" content="width=300,height=250">
+
+	<!-- css -->
+	<style>
+		body {
+			margin: 0;
+		}
+		#clickTag{
+			display: inline-block;
+			position: absolute;
+		}
+	</style>
+
+	<!-- greensock -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js"></script>
+
+	<!-- bannerboy -->
+	<script src="bannerboy.min.js"></script>
+	<script src="pixiedust.js"></script>
+
+	<!-- main -->
+	<script type="text/javascript" src="banner.js"></script>
+
+</head>
+
+<body onload="bannerboy.main();">
+	<a id="banner" href="{{PUB_CLICKTHROUGH}}" target="_blank"></a>
+</body>
+
+</html>

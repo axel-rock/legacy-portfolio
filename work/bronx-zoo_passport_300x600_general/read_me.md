@@ -1,0 +1,44 @@
+# File compression
+
+- earth :
+- train :
+- rail :
+- cloud_1 : 2
+- cloud_2 : 2
+
+- bg_city : 8
+- el_bison : 8
+- el_bird : 8
+- el_butterfly : 16
+- dragon : 16
+- dancers_africa : 64
+- dancers_america : 16
+- lion : 32
+- cta_txt : 4
+- txt_5_shadow : 16
+- ribbon_0 : 8
+- ribbon_1 : 8
+- ribbon_2 : 8
+- ribbon_3 : 8
+- ribbon_8 : 8
+- ribbon_9 : 8
+- ribbon_10 : 8
+- txt_5_1 : 32
+- ribbon_4 : 8
+- ribbon_5 : 8
+- ribbon_6 : 8
+- ribbon_7 : 8
+- ribbon : 8
+- txt_5_2 : 32
+- txt_4_1 : 32
+- txt_4_2 : 32
+- txt_3_1 : 32
+- txt_2_2 : 32
+- txt_2_1 : 32
+- txt_1_1 : 32
+- txt_1_2 : 32
+- txt_1_3 : 32
+- txt_1_4 : 32
+- txt_1_5 : 32
+- txt_1_6 : 32
+- logo_bottom : 32

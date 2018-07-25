@@ -1,0 +1,20 @@
+{
+    "version": "1.0", 
+
+    "title": "980x240 Comhem", 
+    "description": "optional string",  
+
+    "width" : "980", 
+    "height": "240", 
+
+    "events": {
+        "enabled": 0, 
+        "list": {}
+    },
+
+    "clicktags": {
+        "clickTAG": "https://www.test.com",
+    },
+
+    "source": "index.html"
+}

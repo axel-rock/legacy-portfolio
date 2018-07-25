@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" lang="sv">
+	<meta name="ad.size" content="height=240,width=980">
+
+	<!-- css -->
+	<style>
+		body {
+			margin: 0;
+		}
+		
+		svg {
+			display: block;
+			position: absolute;
+		}
+	</style>
+
+	<!-- greensock -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+
+	<!-- adform -->
+	<script>document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');</script>
+
+	<!-- bannerboy -->
+
+	<script src="bannerboy.min.js"></script>
+	<script src="bannerboy.butterfly.js"></script>
+
+	<!-- main -->
+	<script type="text/javascript">
+		var clickTag = "http://www.google.org";
+	</script>
+	<script type="text/javascript" src="banner.js"></script>
+
+</head>
+
+<body onload="bannerboy.main();">
+</body>
+
+</html>

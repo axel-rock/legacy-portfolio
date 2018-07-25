@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8" lang="sv">
+
+	<!-- css -->
+	<style>
+		@font-face {
+			font-family: gotham;
+			src: url(gothammedium.woff);
+		}
+		
+		body {
+			margin: 0;
+		}
+		
+		.garamond, .gotham {
+			color: #ffffff;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.garamond {
+			font-family: 'Adobe Garamond Pro', 'EB Garamond', "Garamond", serif;
+			/*font-weight: bold;*/
+			letter-spacing: .05em;
+		}
+		
+		.gotham {
+			font-family: gotham, sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .075em;
+		}
+		
+		.button {
+			border-color: #d0b778;
+		}
+		.button, .slider, .switch, .lh35 {
+			line-height: 35px;
+		}
+
+		.flip {
+			background-color: #000;
+			border-radius: 2px;
+			line-height: 55px;
+			letter-spacing: -.00005px;
+		}
+
+		.padded {
+			/*background-color: red;*/
+			padding: 0 4px;
+			box-sizing: border-box;
+		}
+	</style>
+
+	<!-- greensock -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TimelineLite.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+	
+	<link rel="stylesheet" href="spritesheet.css" type="text/css" media="screen" charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+	<!-- bannerboy -->
+	<script src="bannerboy.min.js"></script>
+
+	<!-- main -->
+	<script type="text/javascript" src="bannerboy.piaget.utils.js"></script>
+	<script type="text/javascript" src="banner.js"></script>
+</head>
+
+<body onload="bannerboy.main();">
+</body>
+
+</html>
