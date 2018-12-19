@@ -63,7 +63,7 @@ Helper.createTextElement = function(args) {
 	for (var i = 0; i < args.length; i++) {
 		delete args[i].parent
 
-		args[i] = Object.assign({position: 'relative', letterSpacing: '-1px', lineHeight: '0.82em'}, args[i])
+		args[i] = Object.assign({position: 'relative', letterSpacing: '-0px', lineHeight: '0.9em'}, args[i])
 		args[i].parent = container
 
 		var txt = Helper.createElement(args[i])

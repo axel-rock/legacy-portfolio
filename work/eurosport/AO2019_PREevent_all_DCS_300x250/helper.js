@@ -27,9 +27,11 @@ Helper.createElement = function(options) {
 		options.backgroundSize = 'contain'
 		options.backgroundRepeat = 'no-repeat'
 
+		var src = options.image
+
 		if (!options.width && !options.height) {
-			if (Helper.imageCache[options.image.split("/").pop()]) {
-				var image = Helper.imageCache[options.image.split("/").pop()]
+			if (Helper.imageCache[options.image.split('/').pop()]) {
+				var image = Helper.imageCache[options.image.split('/').pop()]
 				element.width = image.width * (element.retina ? 0.5 : 1)
 				element.height = image.height * (element.retina ? 0.5 : 1)
 				element.image = image
@@ -37,13 +39,14 @@ Helper.createElement = function(options) {
 			} else {
 				var image = new Image()
 				image.onload = function() {
-					Helper.imageCache[options.image.split("/").pop()] = image
+					console.log(src)
+					Helper.imageCache[src.split('/').pop()] = image
 					element.width = image.width * (element.retina ? 0.5 : 1)
 					element.height = image.height * (element.retina ? 0.5 : 1)
 					element.image = image
 					TweenMax.set(element, {width: element.width, height: element.height})
 				}
-				image.src = options.image
+				image.src = src
 			}
 		}
 	}
@@ -92,17 +95,7 @@ Helper.getDimensions = function() {
 
 Helper.imageCache = {}
 
-Helper.preloadImages = function(preload, callback) {
-	var images = []
-	if (Array.isArray(preload))
-		images = preload
-	else {
-		for (var i in preload) {
-			if (preload[i].Url)
-				images.push(preload[i].Url)
-		}
-	}
-
+Helper.preloadImages = function(images, callback) {
 	var remaining = images.length
 
 	for (var i = 0; i < images.length; i++) {
