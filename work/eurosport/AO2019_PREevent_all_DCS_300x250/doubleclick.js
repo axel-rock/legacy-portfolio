@@ -53,8 +53,10 @@ devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].Default = true;
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].Active = true;
 Enabler.setDevDynamicContent(devDynamicContent);
 
-devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_LT_logo.Url = "../../ao2019_asset-creator/build/html/ao2019_asset-creator_300x250_preevent/ESPplayer_LT_logo.png";
-devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_MG_logo.Url = "../../ao2019_asset-creator/build/html/ao2019_asset-creator_300x250_preevent/ESPplayer_MG_logo.png";
+if (window.location.hostname == 'hostname' || window.location.hostname == '0.0.0.0') {
+	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_LT_logo.Url = "../../ao2019_asset-creator/build/html/ao2019_asset-creator_300x250_preevent/ESPplayer_LT_logo.png";
+	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_MG_logo.Url = "../../ao2019_asset-creator/build/html/ao2019_asset-creator_300x250_preevent/ESPplayer_MG_logo.png";
+}
 
 Enabler.setDevDynamicContent(devDynamicContent);
 
@@ -65,12 +67,13 @@ if (!Enabler.isInitialized()) {
 }
 
 function enablerInitialized() {
-	init();
-// 	if (!Enabler.isVisible()) {
-// 		Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, init);
-// 	} else {
-// 		init();
-// 	}
+	if (window.location.hostname == 'hostname' || window.location.hostname == '0.0.0.0')
+		init();
+	else if (!Enabler.isVisible()) {
+		Enabler.addEventListener(studio.events.StudioEvent.VISIBLE, init);
+	} else {
+		init();
+	}
 }
 
 Helper.onClick = function() {
