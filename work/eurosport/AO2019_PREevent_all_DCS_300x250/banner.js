@@ -61,7 +61,7 @@ function init() {
 
 		TweenMax.set([txt_1, txt_2, txt_3], {y: (logo_top.height + 20) - logo_bottom.height})
 		TweenMax.set(txt_4, {y: (logo_top_2.height) / 2})
-		TweenMax.set(frame_5, {height: height - logo_top_2.height, top: logo_top_2.height})
+		TweenMax.set(frame_5, {height: height - logo_top_2.height - 8, top: logo_top_2.height + 5})
 		TweenMax.set(txt_5, {justifyContent: 'space-around'})
 
 		var cta = txt_5.childNodes[2]
