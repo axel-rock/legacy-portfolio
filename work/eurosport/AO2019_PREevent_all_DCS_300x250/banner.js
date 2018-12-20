@@ -24,15 +24,15 @@ function init() {
 		TweenMax.set(banner, {backgroundColor: dc.IMG_1_COLOR_2})
 
 		var frame_1 = Helper.createElement({id: 'frame_1', width: width, height: height, parent: banner})
-			var img_1 = Helper.createElement({id: 'img_1', image: 'FR1_IMG_1.jpg', parent: frame_1})
+			var img_1 = Helper.createElement({id: 'img_1', image: 'FR1_IMG_1.jpg', width: width, height: height, parent: frame_1})
 			var txt_1 = Helper.createTextElement({id: 'FR1_TXT_1', text: dc.FR1_TXT_1, color: dc.FR1_TXT_1_COLOR, fontSize: dc.FR1_TXT_1_SIZE, parent: frame_1})
 
 		var frame_2 = Helper.createElement({id: 'frame_2', width: width, height: height, parent: banner})
-			var img_2 = Helper.createElement({id: 'img_2', image: 'FR2_IMG_1.jpg', parent: frame_2})
+			var img_2 = Helper.createElement({id: 'img_2', image: 'FR2_IMG_1.jpg', width: width, height: height, parent: frame_2})
 			var txt_2 = Helper.createTextElement({id: 'FR2_TXT_1', text: dc.FR2_TXT_1, color: dc.FR2_TXT_1_COLOR, fontSize: dc.FR2_TXT_1_SIZE, parent: frame_2})
 
 		var frame_3 = Helper.createElement({id: 'frame_3', width: width, height: height, parent: banner})
-			var img_3 = Helper.createElement({id: 'img_3', image: 'FR3_IMG_1.jpg', parent: frame_3})
+			var img_3 = Helper.createElement({id: 'img_3', image: 'FR3_IMG_1.jpg', width: width, height: height, parent: frame_3})
 			var txt_3 = Helper.createTextElement([
 				{id: 'FR3_TXT_1', text: dc.FR3_TXT_1, color: dc.FR3_TXT_1_COLOR, fontSize: dc.FR3_TXT_1_SIZE, parent: frame_3},
 				{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, lineHeight: '1.5em', parent: frame_3}
@@ -70,6 +70,10 @@ function init() {
 		var cta_inner = Helper.createTextElement({id: 'cta_inner', position: 'relative', text: dc.FR5_TXT_3, color: config.endcolor, fontSize: dc.FR5_TXT_3_SIZE, padding: '13px 35px', lineHeight: '1em', parent: cta})
 		TweenMax.set(cta, {overflow: 'hidden'})
 		TweenMax.set(cta.childNodes[0], {position: 'relative'})
+
+		if (Helper.detectIE() && Helper.detectIE() == 11) {
+			TweenMax.set(cta_inner, {top: dc.FR5_TXT_3_SIZE * 0.1})
+		}
 
 
 		var mask_1 = new Mask({source: img_1, colors: [config.duotone[0], config.duotone[1]]})

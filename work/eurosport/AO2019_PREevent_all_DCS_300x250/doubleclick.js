@@ -37,7 +37,6 @@ devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_2_SIZE = 20;
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_3 = "SUBSCRIBE";
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_3_COLOR = "#ffe23a";
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_3_SIZE = 24;
-// devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_4 = "\u00A359.88 TOTAL PRICE, INCL. VAT. T&CS APPLY. SUBSCRIPTION REQUIRED.<BR\/>AUTO RENEWS, UNLESS CANCELLED. INTERNET CONNECTION REQUIRED.<BR\/>OFFER ONLY AVAILABLE IN THE UK.";
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_4 = "\u00A359.88 TOTAL PRICE, INCL. VAT. T&CS APPLY. SUBSCRIPTION REQUIRED.<BR\/>AUTO RENEWS, UNLESS CANCELLED. MINIMUM TERM APPLIES.<BR\/>INTERNET CONNECTION REQUIRED. OFFER ONLY AVAILABLE IN THE UK.";
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_4_COLOR = "#ffffff";
 devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].FR5_TXT_4_SIZE = 8;

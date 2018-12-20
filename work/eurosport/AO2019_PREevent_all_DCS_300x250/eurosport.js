@@ -17,8 +17,8 @@ function Mask(options) {
 	var imageData = context.getImageData(0, 0, width, height),
 		data = imageData.data
 
-	canvas.style.width = options.source.width + 'px'
-	canvas.style.height = options.source.height + 'px'
+	canvas.style.width = '100%'
+	canvas.style.height = '100%'
 	colors = [[parseInt(colors[0][1], 16), parseInt(colors[0][2], 16), parseInt(colors[0][3], 16)], [parseInt(colors[1][1], 16), parseInt(colors[1][2], 16), parseInt(colors[1][3], 16)]]
 
 	var gradient = []
