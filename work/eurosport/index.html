@@ -6,12 +6,19 @@
 		<link rel="shortcut icon" href="#">
 
 		<link rel="stylesheet" href="https://jonathan-harrell.com/wp-content/themes/jonathanharrell/node_modules/hiq/dist/hiq.css">
+		<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
 		<style>
 			body {
-				margin: 0;
+				margin: 0 auto;
 				padding: 1rem;
 				display: flex;
 				flex-direction: column;
+				max-width: 1200px;
+				font-family: 'Inconsolata', sans-serif;
+			}
+
+			body>*:not(:first-child), #form>*:not(:first-child), .fieldset:not(:first-child) {
+				margin-top: 1rem;
 			}
 
 			::selection {
@@ -20,57 +27,94 @@
 				background-color: var(--selection-color);
 			}
 
-			fieldset {
-				padding: 1rem;
-				border-left: solid 1px #fefefe;
-				max-width: 500px;
+			#preview_container {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 
-			#banner_selector {
-				margin-bottom: 1rem;
+			#preview {
+				width: auto;
+				background-color: #000000;
 			}
 
 			.fields {
-				/* box-sizing: content-box; */
-				display: grid;
-				grid-template-columns: 24% 24% 24% 24%;
-				grid-column-gap: 1.25%;
+				display: flex;
+				flex-direction: column;
 			}
 
-			.fields .field {
-				margin-bottom: 1rem;
-				max-width: 500px;
-				min-width: 20vw;
+			.fields>.fieldset {
+				display: flex;
+				flex-direction: row;
+			}
+
+			.fields>.fieldset>div {
+				flex-grow: 1;
+			}
+
+			.fields>.fieldset>.SIZE {
+				flex-grow: 0;
+				padding-left: 1rem;
+			}
+
+			textarea {
+				min-height: 10rem;
+			}
+
+			.center {
+				text-align: center;
 			}
 
 			#defaults_fields {
 				opacity: 0.3;
 			}
 		</style>
-		<!-- <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script> -->
 	</head>
 	<body>
-		<iframe id="preview" frameBorder="0"></iframe>
+		<div id="preview_container">
+			<iframe id="preview" frameBorder="0"></iframe>
+		</div>
 		<select id="banner_selector">
+			<option value="AO2019_PREevent_all_DCS_160x600">AO2019_PREevent_all_DCS_160x600</option>
 			<option value="AO2019_PREevent_all_DCS_300x250">AO2019_PREevent_all_DCS_300x250</option>
-			<!-- <option value="test_970x250">test_970x250</option> -->
+			<option value="AO2019_PREevent_all_DCS_300x600">AO2019_PREevent_all_DCS_300x600</option>
+			<option value="AO2019_PREevent_all_DCS_320x50">AO2019_PREevent_all_DCS_320x50</option>
+			<option value="AO2019_PREevent_all_DCS_728x90">AO2019_PREevent_all_DCS_728x90</option>
+			<option value="AO2019_INevent_all_DCS_300x250">AO2019_INevent_all_DCS_300x250</option>
 		</select>
 		<form id="form" action="#" method="get">
+			<div class="center">
+				<input type="submit" name="save" value="Save"/>
+				<input type="button" name="reset" value="Reset" onClick="resetDynamicContent()"/>
+				<input type="button" name="open" value="Open in new tab" onClick="openInNewTab()"/>
+				<input type="button" name="open" value="Change Logo" onClick="showAltLogos()"/>
+			</div>
 			<div id="fields" class="fields"></div>
 			<div id="defaults_fields" class="fields"></div>
-			<input type="submit" name="save" value="Save"/>
-			<input type="button" name="reset" value="Reset" onClick="resetDynamicContent()"/>
+			<div class="center">
+				<input type="submit" name="save" value="Save"/>
+				<input type="button" name="reset" value="Reset" onClick="resetDynamicContent()"/>
+				<!-- <input type="button" name="open" value="Open in new tab" onClick="openInNewTab()"/> -->
+				<!-- <input type="button" name="open" value="Change Logo" onClick="showAltLogos()"/> -->
+				<a role="button" href="Archive.zip" name="download">Download files</a>
+				<a role="button" href="https://docs.google.com/spreadsheets/d/1Li5E-RX4og20zYPCqaCH5TlVQwB01hlJ7uKJOOnAI9Q/edit?usp=sharing" target="_blank">Spreadsheet sample</a>
+			</div>
 		</form>
+		<p class="center">Use <code>&lt;br/&gt;</code> for line breaks.</p>
+		<p class="center">This page is for preview only. It will help you find the best copy, font size and line breaks for the creatives. <b>Changes here don't affect DoubleClick's Dynamic Content</b></p>
 		<script type="text/javascript">
 			let data = {
 				url: null,
 				key: null,
 				original: null,
-				new: null
+				new: null,
+				alt: false,
 			}
-			// let banner_selector = document.querySelector('#banner_selector')
+
 			banner_selector.onchange = (e) => {
 				createPreview(e.target.value)
+				resetDynamicContent()
 			}
 
 			form.onsubmit = replaceDynamicContent
@@ -78,10 +122,13 @@
 			function createPreview(url) {
 				let dimensions = url.match(/\d+x\d+/)[0].split('x')
 				data.url = url
+				localStorage.setItem('current_banner', url)
 				preview.width = dimensions[0]
 				preview.height = dimensions[1]
+				preview.style.width = dimensions[0] + 'px'
+				preview.style.height = dimensions[1] + 'px'
 				preview.onload = () => preview.contentWindow.Helper.onReady = loadDynamicContent
-				preview.src = data.url
+				preview.src = data.url + '?rand=' + Math.random()
 			}
 
 			function loadDynamicContent() {
@@ -93,56 +140,88 @@
 				fields.innerHTML = ''
 				defaults_fields.innerHTML = ''
 
+				let fieldsets = {}
+
 				for (let key in data.new) {
-					createField(key, data.new[key])
+					let field = key.match(/FR\d+_TXT_\d+/)
+					let fieldset = null
+					if (!field)
+						continue;
+
+					if (fieldsets[field[0]])
+						fieldset = fieldsets[field[0]]
+					else {
+						fieldsets[field[0]] = fieldset = document.createElement('div')
+						fieldset.classList.add('fieldset')
+						// fieldset.innerHTML = `<legend>${field[0]}</legend>`
+						fields.appendChild(fieldset)
+					}
+					createField(key, data.new[key], fieldset)
 				}
 
 				preview.contentWindow.dynamicContent[data.key][0] = data.new
 			}
 
+			function openInNewTab() {
+				window.open(data.url)
+			}
+
 			function resetDynamicContent() {
 				data.new = null
+				data.alt = false
 				preview.src = data.url
 			}
 
 			function replaceDynamicContent(event) {
-				event.preventDefault()
+				if (event)
+					event.preventDefault()
 				preview.onload = () => preview.contentWindow.Helper.onReady = loadDynamicContent
-				preview.src = data.url
+				let url = data.url + '?rand=' + Math.random()
+				preview.src = url
+				preview.contentWindow.location.href = url
+				console.log(preview.contentWindow.location.href)
 			}
 
-			function createField(id, value, name) {
-				if (typeof value === 'object') {
-					for (let key in value) {
-						if (key != 'key')
-							createField(key, value[key], id + ' | ' + key)
-					}
-				} else {
-					let div = document.createElement('div')
-						div.classList.add('field')
-					let label = document.createElement('label')
-						label.htmlFor = id
-						label.innerHTML = name || id
-					let input = document.createElement('input')
-						input.type = value == parseInt(value) ? 'number' : 'text'
-						// input.type = /^#[0-9A-F]{6}$/i.test(value) ? 'color' : 'text'
-						input.id = id
-						input.name = id
-						input.value = value
-					input.onchange = (e) => {
-						data.new[e.target.name] = e.target.value
-					}
-					div.appendChild(label)
-					div.appendChild(input)
-					if (id == '_id' || id == 'Unique_ID' || id == 'Reporting_Label' || id == 'Targeting_Column')
-						defaults_fields.appendChild(div)
-					else
-						fields.appendChild(div)
-
+			function createField(id, value, parent) {
+				let type = id.replace(/FR\d+_TXT_\d+_/, '')
+				if (type == 'COLOR') return;
+				let div = document.createElement('div')
+					div.classList.add('field', type)
+				let label = document.createElement('label')
+					label.htmlFor = id
+					label.innerHTML = id
+				let input = document.createElement(value.length > 100 ? 'textarea' : 'input')
+					input.type = value == parseInt(value) ? 'number' : 'text'
+					input.id = id
+					input.name = id
+					input.value = value
+				if (input.type == 'number') {
+					input.min = 0
+					input.max = 256
 				}
+				input.onchange = (e) => {
+					data.new[e.target.name] = e.target.value
+				}
+				div.appendChild(label)
+				div.appendChild(input)
+				parent.appendChild(div)
 			}
 
-			createPreview(banner_selector.options[0].value)
+			function showAltLogos() {
+				data.alt = !data.alt
+				for (var i in data.new) {
+					if (data.new[i].Type == 'file') {
+						if (data.alt)
+							data.new[i].Url = data.new[i].Url.replace('logo.png', 'logo-fr.png')
+						else
+							data.new[i].Url = data.new[i].Url.replace('logo-fr.png', 'logo.png')
+					}
+				}
+				replaceDynamicContent()
+			}
+
+			banner_selector.value = localStorage.getItem('current_banner') || banner_selector.options[0].value
+			createPreview(banner_selector.value)
 		</script>
 	</body>
 </html>
