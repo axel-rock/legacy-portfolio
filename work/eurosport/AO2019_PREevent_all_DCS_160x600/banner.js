@@ -25,28 +25,29 @@ function init() {
 
 		TweenMax.set(banner, {backgroundColor: config.endcolor})
 
+		var frame_1 = Helper.createElement({id: 'frame_1', width: '100%', height: '100%', parent: banner})
+			var img_1 = Helper.createElement({id: 'img_1', image: 'FR1_IMG_1.jpg', width: width, height: height, parent: frame_1})
+			var txt_1 = Helper.createTextElement({id: 'FR1_TXT_1', text: dc.FR1_TXT_1, color: dc.FR1_TXT_1_COLOR, fontSize: dc.FR1_TXT_1_SIZE, parent: frame_1})
+
+		var frame_2 = Helper.createElement({id: 'frame_2', width: '100%', height: '100%', parent: banner})
+			var img_2 = Helper.createElement({id: 'img_2', image: 'FR2_IMG_1.jpg', width: width, height: height, parent: frame_2})
+			var txt_2 = Helper.createTextElement({id: 'FR2_TXT_1', text: dc.FR2_TXT_1, color: dc.FR2_TXT_1_COLOR, fontSize: dc.FR2_TXT_1_SIZE, parent: frame_2})
+
+		var frame_3 = Helper.createElement({id: 'frame_3', width: '100%', height: '100%', parent: banner})
+			var img_3 = Helper.createElement({id: 'img_3', image: 'FR3_IMG_1.jpg', width: width, height: height, parent: frame_3})
+			var txt_3 = Helper.createTextElement([
+				{id: 'FR3_TXT_1', text: dc.FR3_TXT_1, color: dc.FR3_TXT_1_COLOR, fontSize: dc.FR3_TXT_1_SIZE, parent: frame_3},
+				{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, parent: frame_3}
+			])
+
 		var container_top = Helper.createElement({id: 'container_top', width: width, height: limit, parent: banner})
-
-			var frame_1 = Helper.createElement({id: 'frame_1', width: '100%', height: '100%', parent: container_top})
-				var img_1 = Helper.createElement({id: 'img_1', image: 'FR1_IMG_1.jpg', width: width, height: height, parent: frame_1})
-				var txt_1 = Helper.createTextElement({id: 'FR1_TXT_1', text: dc.FR1_TXT_1, color: dc.FR1_TXT_1_COLOR, fontSize: dc.FR1_TXT_1_SIZE, parent: frame_1})
-
-			var frame_2 = Helper.createElement({id: 'frame_2', width: '100%', height: '100%', parent: container_top})
-				var img_2 = Helper.createElement({id: 'img_2', image: 'FR2_IMG_1.jpg', width: width, height: height, parent: frame_2})
-				var txt_2 = Helper.createTextElement({id: 'FR2_TXT_1', text: dc.FR2_TXT_1, color: dc.FR2_TXT_1_COLOR, fontSize: dc.FR2_TXT_1_SIZE, parent: frame_2})
-
-			var frame_3 = Helper.createElement({id: 'frame_3', width: '100%', height: '100%', parent: container_top})
-				var img_3 = Helper.createElement({id: 'img_3', image: 'FR3_IMG_1.jpg', width: width, height: height, parent: frame_3})
-				var txt_3 = Helper.createTextElement([
-					{id: 'FR3_TXT_1', text: dc.FR3_TXT_1, color: dc.FR3_TXT_1_COLOR, fontSize: dc.FR3_TXT_1_SIZE, parent: frame_3},
-					{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, parent: frame_3}
-				])
-
 			var frame_4 = Helper.createElement({id: 'frame_4', width: '100%', height: '100%', parent: container_top})
 				var txt_4 = Helper.createTextElement([
 					{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_4},
 					{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: frame_4}
 				])
+
+		var logo_bottom = Helper.createElement({id: 'logo_bottom', image: dc.ESPplayer_LT_logo.Url, left: 0, right: 0, bottom: 0, margin: '0 auto', parent: banner})
 
 		var container_bottom = Helper.createElement({id: 'container_bottom', top: limit, width: width, height: height - limit, overflow: 'hidden', parent: banner})
 			var logo_middle = Helper.createElement({id: 'logo_middle', image: dc.ESPplayer_MG_logo.Url, left: 0, right: 0, margin: '0 auto', parent: container_bottom})
@@ -62,8 +63,9 @@ function init() {
 
 		// Adjust
 
-		TweenMax.set([txt_1, txt_2, txt_4], {y: (logo_top.height) / 2})
-		// TweenMax.set(txt_4, {y: (logo_middle.height) / 2})
+		TweenMax.set([txt_1, txt_2, txt_3], {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
+		// TweenMax.set(txt_4, {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
+		TweenMax.set(txt_4, {y: (logo_top.height) / 2})
 		// TweenMax.set(frame_5, {height: height - logo_middle.height - 8, top: logo_middle.height + 5})
 		TweenMax.set(txt_5, {justifyContent: 'space-around'})
 
@@ -90,12 +92,10 @@ function init() {
 			.add('frame_1')
 			.from(frame_1, speed, {opacity: 0, ease: ease}, 'frame_2')
 			.from(logo_top, speed, {y: -logo_top.height - 20, ease: ease}, '-=0.1')
+			.from(logo_bottom, speed, {y: logo_bottom.height, ease: ease}, '-=' + speed)
 			.add(mask_1.to(0.7, {progress: 1}), '-=0.3')
 			.staggerFrom(txt_1.childNodes, 0.7, {y: height, ease: ease}, 0.05, '-=0.7')
 			.from(txt_1, 0.4, {opacity: 0}, '-=' + (speed * 0.5))
-			.from(logo_middle, speed, {y: -logo_middle.height, ease: ease}, '-=' + (speed * 0.5))
-			.from(txt_5, speed, {opacity: 0}, '-=' + (speed * 0.5))
-			.from(cta, speed, {width: 0}, '-=0.3')
 
 			.add('frame_2', '+=1.3')
 			.to(frame_1, speed, {opacity: 0}, 'frame_2')
@@ -111,9 +111,13 @@ function init() {
 
 			.add('frame_4', '+=1.3')
 			.to(frame_3, speed, {opacity: 0}, 'frame_4')
+			.to(logo_bottom, speed, {y: logo_bottom.height, ease: ease}, '-=' + speed)
 			.from(frame_4, speed, {opacity: 0}, 'frame_4')
 			.from(txt_4, 0.4, {opacity: 0}, '-=' + speed)
 			.staggerFrom(txt_4.childNodes, 0.7, {y: height, ease: ease}, 0.05, '-=' + speed)
+			.from(logo_middle, speed, {y: -logo_middle.height, ease: ease}, '-=' + (speed * 0.5))
+			.from(txt_5, speed, {opacity: 0}, '-=' + (speed * 0.5))
+			.from(cta, speed, {width: 0}, '-=0.3')
 
 			.add('blink', '+=1')
 			.to(cta, 0.2, {backgroundColor: dc.FR5_TXT_4_COLOR}, 'blink')

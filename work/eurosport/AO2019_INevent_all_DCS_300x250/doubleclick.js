@@ -54,8 +54,8 @@ devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].Active = true;
 Enabler.setDevDynamicContent(devDynamicContent);
 
 if (window.location.hostname == 'localhost' || window.location.hostname == '0.0.0.0' || window.location.hostname == 'rock.bzh') {
-	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_LT_logo.Url = "../AO2019_PREevent-assets/" + Helper.getDimensions().width + "x" + Helper.getDimensions().height + "/ESPplayer_LT_logo.png";
-	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_MG_logo.Url = "../AO2019_PREevent-assets/" + Helper.getDimensions().width + "x" + Helper.getDimensions().height + "/ESPplayer_MG_logo.png";
+	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_LT_logo.Url = "../AO2019_INevent-assets/" + Helper.getDimensions().width + "x" + Helper.getDimensions().height + "/ESPplayer_LT_logo.png";
+	devDynamicContent.Eurosport__Australian_Open_2019_Feed[0].ESPplayer_MG_logo.Url = "../AO2019_INevent-assets/" + Helper.getDimensions().width + "x" + Helper.getDimensions().height + "/ESPplayer_MG_logo.png";
 }
 
 Enabler.setDevDynamicContent(devDynamicContent);

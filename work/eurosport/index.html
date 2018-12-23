@@ -81,7 +81,11 @@
 			<option value="AO2019_PREevent_all_DCS_300x600">AO2019_PREevent_all_DCS_300x600</option>
 			<option value="AO2019_PREevent_all_DCS_320x50">AO2019_PREevent_all_DCS_320x50</option>
 			<option value="AO2019_PREevent_all_DCS_728x90">AO2019_PREevent_all_DCS_728x90</option>
+			<option value="AO2019_INevent_all_DCS_160x600">AO2019_INevent_all_DCS_160x600</option>
 			<option value="AO2019_INevent_all_DCS_300x250">AO2019_INevent_all_DCS_300x250</option>
+			<option value="AO2019_INevent_all_DCS_300x600">AO2019_INevent_all_DCS_300x600</option>
+			<option value="AO2019_INevent_all_DCS_320x50">AO2019_INevent_all_DCS_320x50</option>
+			<option value="AO2019_INevent_all_DCS_728x90">AO2019_INevent_all_DCS_728x90</option>
 		</select>
 		<form id="form" action="#" method="get">
 			<div class="center">
@@ -97,8 +101,8 @@
 				<input type="button" name="reset" value="Reset" onClick="resetDynamicContent()"/>
 				<!-- <input type="button" name="open" value="Open in new tab" onClick="openInNewTab()"/> -->
 				<!-- <input type="button" name="open" value="Change Logo" onClick="showAltLogos()"/> -->
-				<a role="button" href="Archive.zip" name="download">Download files</a>
-				<a role="button" href="https://docs.google.com/spreadsheets/d/1Li5E-RX4og20zYPCqaCH5TlVQwB01hlJ7uKJOOnAI9Q/edit?usp=sharing" target="_blank">Spreadsheet sample</a>
+				<a role="button" href="Archive.zip" name="download">Download PREevent files</a>
+				<a role="button" href="https://docs.google.com/spreadsheets/d/1Li5E-RX4og20zYPCqaCH5TlVQwB01hlJ7uKJOOnAI9Q/edit?usp=sharing" target="_blank" style="background-color: #52a16a; color: #ffffff">Spreadsheet sample</a>
 			</div>
 		</form>
 		<p class="center">Use <code>&lt;br/&gt;</code> for line breaks.</p>
@@ -179,7 +183,6 @@
 				let url = data.url + '?rand=' + Math.random()
 				preview.src = url
 				preview.contentWindow.location.href = url
-				console.log(preview.contentWindow.location.href)
 			}
 
 			function createField(id, value, parent) {
