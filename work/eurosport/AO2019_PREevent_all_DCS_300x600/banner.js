@@ -40,36 +40,60 @@ function init() {
 				{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, parent: frame_3}
 			])
 
-		var container_top = Helper.createElement({id: 'container_top', width: width, height: limit, parent: banner})
-			var frame_4 = Helper.createElement({id: 'frame_4', width: '100%', height: '100%', parent: container_top})
-				var txt_4 = Helper.createTextElement([
-					{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_4},
-					{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: frame_4}
-				])
+		// var container_top = Helper.createElement({id: 'container_top', width: width, height: limit, parent: banner})
+			// var frame_4 = Helper.createElement({id: 'frame_4', width: '100%', height: '100%', parent: container_top})
+			// 	var txt_4 = Helper.createTextElement([
+			// 		{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_4},
+			// 		{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: frame_4}
+			// 	])
 
 		var logo_bottom = Helper.createElement({id: 'logo_bottom', image: dc.ESPplayer_LT_logo.Url, left: 0, right: 0, bottom: 0, margin: '0 auto', parent: banner})
 
-		var container_bottom = Helper.createElement({id: 'container_bottom', top: limit, width: width, height: height - limit, overflow: 'hidden', parent: banner})
-			var logo_middle = Helper.createElement({id: 'logo_middle', image: dc.ESPplayer_MG_logo.Url, left: 0, right: 0, margin: '0 auto', parent: container_bottom})
-			var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: height - limit - logo_middle.height - 10, top: logo_middle.height + 5, parent: container_bottom})
-				var txt_5 = Helper.createTextElement([
-					{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5},
-					{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5},
-					{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5},
-					{id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, parent: container_bottom}
-				])
+		// var container_bottom = Helper.createElement({id: 'container_bottom', top: limit, width: width, height: height - limit, overflow: 'hidden', parent: banner})
+		// 	var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: '100%', parent: container_bottom})
+		// 		var txt_5 = Helper.createTextElement([
+		// 			{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5},
+		// 			{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5},
+		// 			{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5},
+		// 			{id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: container_bottom}
+		// 		])
 
 		var logo_top = Helper.createElement({id: 'logo_top', image: 'AO2018_logo.png', left: 0, right: 0, top: 20, margin: '0 auto', parent: banner})
+		var logo_middle = Helper.createElement({id: 'logo_middle', image: dc.ESPplayer_MG_logo.Url, left: 0, right: 0, margin: '0 auto', parent: banner})
+
+		var endframe = Helper.createElement({id: 'endframe', width: width, height: height - logo_middle.height, top: logo_middle.height, parent: banner})
+			var txt_4_1 = Helper.createTextElement({id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: endframe})
+			var endframe_bottom = Helper.createElement({id: 'endframe_bottom', width: '100%', parent: endframe})
+				var txt_4_2 = Helper.createTextElement({id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: endframe_bottom})
+				var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: '100%', parent: endframe_bottom})
+					// var txt_5 = {}
+					var txt_5 = Helper.createTextElement([{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, parent: frame_5}, {id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8em', parent: frame_5}])
+					var cta_container = Helper.createTextElement([{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5}])
+					var txt_legal = Helper.createTextElement({id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: frame_5})
+
+						// var txt_5 = Helper.createTextElement([
+						// 	{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5},
+						// 	{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5},
+						// 	{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5},
+						// 	{id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: frame_5}
+						// ])
 
 		// Adjust
 
-		TweenMax.set([txt_1, txt_2, txt_3], {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
+		TweenMax.set(txt_2, {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
+		TweenMax.set(txt_3, {textShadow: '0px 0px 10px rgba(0, 0, 0, 0.5)'})
+		TweenMax.set([endframe, endframe_bottom], {display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', flexGrow: 3})
+		TweenMax.set(txt_4_1, {flexGrow: 1})
+		TweenMax.set(txt_4_2, {justifyContent: 'flex-start'})
+		TweenMax.set(endframe.childNodes, {position: 'relative', height: 'auto'})
+		TweenMax.set(frame_5.childNodes, {position: 'relative', height: 'auto'})
+		TweenMax.set(endframe_bottom.childNodes, {position: 'absolute', height: '100%', width: '100%'})
 		// TweenMax.set(txt_4, {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
-		TweenMax.set(txt_4, {y: (logo_top.height) / 2})
+		// TweenMax.set(txt_4, {y: (logo_top.height) / 2})
 		// TweenMax.set(frame_5, {height: height - logo_middle.height - 8, top: logo_middle.height + 5})
-		TweenMax.set(txt_5, {justifyContent: 'space-around'})
+		TweenMax.set(frame_5, {display: 'flex', flexDirection: 'column', justifyContent: 'space-around'})
 
-		var cta = txt_5.childNodes[2]
+		var cta = cta_container.childNodes[0]
 		var cta_txt = cta.innerHTML
 		cta.innerHTML = ''
 		var cta_inner = Helper.createTextElement({id: 'cta_inner', position: 'relative', text: dc.FR5_TXT_3, color: config.endcolor, fontSize: dc.FR5_TXT_3_SIZE, padding: '14px 15px', lineHeight: '1em', parent: cta})
@@ -79,7 +103,6 @@ function init() {
 		if (Helper.detectIE() && Helper.detectIE() == 11) {
 			TweenMax.set(cta_inner, {top: dc.FR5_TXT_3_SIZE * 0.1})
 		}
-
 
 		var mask_1 = new Mask({source: img_1, colors: [config.duotone[0], config.duotone[1]]})
 		var mask_2 = new Mask({source: img_2, colors: [config.duotone[0], config.duotone[1]]})
@@ -111,18 +134,27 @@ function init() {
 
 			.add('frame_4', '+=1.3')
 			.to(frame_3, speed, {opacity: 0}, 'frame_4')
-			.to(logo_bottom, speed, {y: logo_bottom.height, ease: ease}, '-=' + speed)
-			.from(frame_4, speed, {opacity: 0}, 'frame_4')
-			.from(txt_4, 0.4, {opacity: 0}, '-=' + speed)
-			.staggerFrom(txt_4.childNodes, 0.7, {y: height, ease: ease}, 0.05, '-=' + speed)
-			.from(logo_middle, speed, {y: -logo_middle.height, ease: ease}, '-=' + (speed * 0.5))
+			.to(logo_bottom, speed, {y: logo_bottom.height, ease: ease}, 'frame_4')
+			.to(logo_top, speed, {y: -logo_top.height - 20, ease: ease}, 'frame_4')
+			.from(endframe, speed, {opacity: 0}, 'frame_4')
+			.from(logo_middle, speed, {y: -logo_middle.height, ease: ease}, 'frame_4')
+			.staggerFrom([txt_4_1, txt_4_2], 0.7, {y: height, ease: ease}, 0.05, 'frame_4')
+			.from([txt_4_1, txt_4_2], 0.4, {opacity: 0}, '-=' + speed)
+
+			.add('frame_5', '+=1.3')
+			.to(txt_4_2, speed, {opacity: 0}, 'frame_5')
+			// .staggerFrom(txt_4.childNodes, 0.7, {y: height, ease: ease}, 0.05, '-=' + speed)
 			.from(txt_5, speed, {opacity: 0}, '-=' + (speed * 0.5))
 			.from(cta, speed, {width: 0}, '-=0.3')
+			.from(txt_legal, speed, {opacity: 0}, '-=0.3')
 
 			.add('blink', '+=1')
 			.to(cta, 0.2, {backgroundColor: dc.FR5_TXT_4_COLOR}, 'blink')
 			.to(cta, 0.2, {backgroundColor: dc.FR5_TXT_3_COLOR})
 
+		// console.log(tl.duration())
+
+		// tl.play('frame_4')
 
 		// Interaction
 

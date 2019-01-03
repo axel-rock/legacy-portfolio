@@ -36,41 +36,41 @@ function init() {
 				{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, lineHeight: '1.5em', parent: frame_3}
 			])
 
-		var logo_bottom = Helper.createElement({id: 'logo_bottom', image: dc.ESPplayer_LT_logo.Url, right: 0, bottom: 0, parent: banner})
+		var logo_top = Helper.createElement({id: 'logo_top', image: 'AO2018_logo.png', left: 0, zIndex: 2, parent: banner})
+		var logo_bottom = Helper.createElement({id: 'logo_bottom', image: dc.ESPplayer_LT_logo.Url, right: 0, bottom: 0, zIndex: 2, parent: banner})
 
 		var end_frame = Helper.createElement({id: 'end_frame', width: width, height: height, backgroundColor: config.endcolor, parent: banner})
-			var frame_4 = Helper.createElement({id: 'frame_4', width: 364 - 16, height: height, backgroundColor: config.endcolor, parent: end_frame})
+
+			var frame_4 = Helper.createElement({id: 'frame_4', width: width, height: height, parent: end_frame})
 				var txt_4 = Helper.createTextElement([
-					{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', textAlign: 'right', alignItems: 'right', parent: frame_4},
-					{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', textAlign: 'right', alignItems: 'right', parent: frame_4}
+					{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_4},
+					{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: 1, parent: frame_4}
 				])
 
-			var logo_top_2 = Helper.createElement({id: 'logo_top_2', image: dc.ESPplayer_MG_logo.Url, left: 364, parent: end_frame})
+			var frame_5 = Helper.createElement({id: 'frame_5', width: width, height: height, parent: end_frame})
+				var frame_5_top = Helper.createElement({id: 'frame_5_top', width: '100%', height: '70%', display: 'flex', flexDirection: 'row', justifyContent: 'space-around', parent: frame_5})
+					var txt_5_top_left = Helper.createTextElement([
+						{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, textAlign: 'right', parent: frame_5_top},
+						{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, textAlign: 'right', parent: frame_5_top},
+					])
+					var cta = Helper.createTextElement([
+						{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, width: '30%', height: 'auto', parent: frame_5_top},
+					])
+				var frame_5_bottom = Helper.createElement({id: 'frame_5_bottom', width: '100%', height: '40%', top: '60%', parent: frame_5})
+					var txt_5_5 = Helper.createTextElement({id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: frame_5_bottom})
 
-			var frame_5 = Helper.createElement({id: 'frame_5', /*display: 'grid', */width: 270 - 40, height: height - 20, left: 460 + 20, top: 15, backgroundColor: config.endcolor, parent: end_frame})
-				var frame_5_top = Helper.createElement({id: 'frame_5_top', width: '100%', display: 'flex', justifyContent: 'space-between', position: 'relative', parent: frame_5})
-					var frame_5_top_left = Helper.createElement({id: 'frame_5_top_left', position: 'relative', parent: frame_5_top})
-						var txt_5 = Helper.createTextElement([
-							{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5_top_left},
-							{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5_top_left}
-						])
-					var cta = Helper.createTextElement({id: 'FR5_TXT_3', text: '', parent: frame_5_top})
-				var txt_5_5 = Helper.createTextElement({id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, bottom: 0, parent: frame_5})
-
-
-		var logo_top = Helper.createElement({id: 'logo_top', image: 'AO2018_logo.png', left: 0, parent: banner})
 
 		// Adjust
-		TweenMax.set(logo_top, {top: (height - logo_top.height) / 2})
-		TweenMax.set(cta, {width: 'auto', height: 'auto', position: 'relative', backgroundColor: dc.FR5_TXT_3_COLOR, right: 0})
-		TweenMax.set(txt_5, {position: 'relative'})
-		TweenMax.set(txt_5_5, {/*position: 'relative', */height: 'auto', bottom: 0})
+		TweenMax.set(logo_top, {left: 20, top: (height - logo_top.height) / 2})
+		TweenMax.set(txt_5_top_left, {display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-end'})
+		TweenMax.set(cta, {alignItems: 'flex-start'})
+		TweenMax.set(frame_5_top.childNodes, {position: 'relative', width: '48%'})
 
 		var cta_txt = cta.innerHTML
 		cta.innerHTML = ''
-		var cta_inner = Helper.createTextElement({id: 'cta_inner', position: 'relative', text: dc.FR5_TXT_3, color: config.endcolor, fontSize: dc.FR5_TXT_3_SIZE, padding: '6px 6px', lineHeight: '1em', parent: cta})
-		TweenMax.set(cta, {overflow: 'hidden'})
-		TweenMax.set(cta_inner, {width: 'auto', backgroundColor: dc.FR5_TXT_3_COLOR})
+		var cta_inner = Helper.createTextElement({id: 'cta_inner', position: 'relative', text: dc.FR5_TXT_3, color: config.endcolor, fontSize: dc.FR5_TXT_3_SIZE, padding: '10px 13px', lineHeight: '1em', parent: cta})
+		TweenMax.set(cta, {overflow: 'hidden', height: 'auto'})
+		TweenMax.set(cta_inner, {width: 'auto', height: 'auto', backgroundColor: dc.FR5_TXT_3_COLOR})
 		TweenMax.set(cta.childNodes[0], {position: 'relative'})
 
 		if (Helper.detectIE() && Helper.detectIE() == 11) {
@@ -100,11 +100,14 @@ function init() {
 			.staggerFrom(txt_3.childNodes, 0.4, {opacity: 0}, 0.05, '-=' + speed)
 
 			.add('frame_4', '+=1.3')
+			.from(frame_4, speed, {opacity: 0}, 'frame_4')
 			.from(end_frame, speed, {opacity: 0}, 'frame_4')
-			.from(frame_4, speed, {opacity: 0, x: -width, ease: ease}, 'frame_4')
-			.from(frame_5, speed, {opacity: 0, x: width, ease: ease}, 'frame_4')
-			// .to(logo_top, speed, {x: -logo_top.width, opacity: 0}, 'frame_4')
-			.from(logo_top_2, speed, {y: -logo_top_2.height, ease: ease}, 'frame_4')
+			.from(txt_4, 0.4, {opacity: 0}, '-=' + speed)
+			.staggerFrom(txt_4.childNodes, 0.7, {y: height, ease: ease}, 0.05, '-=' + speed)
+
+			.add('frame_5', '+=1.5')
+			.to(frame_4, speed, {opacity: 0, y: -height}, 'frame_5')
+			.from(frame_5, 0.4, {opacity: 0, y: height}, '-=' + speed)
 
 			.add('blink', '+=1')
 			.to(cta_inner, 0.2, {backgroundColor: dc.FR5_TXT_4_COLOR}, 'blink')
