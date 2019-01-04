@@ -10,7 +10,7 @@ function init() {
 		dc = dynamicContent[Object.keys(dynamicContent)[0]][0],
 		images = ['FR1_IMG_1.jpg', 'FR2_IMG_1.jpg', 'FR2_IMG_2.jpg', 'FR2_IMG_3.jpg', 'FR3_IMG_1.jpg', 'AO2018_logo.png'],
 		config = {
-			duotone: ['#d4aa00', '#ffde14'],
+			duotone: ['#be9a25', '#ffdd00'],
 			endcolor: dc.END_COLOR || '#0091d2',
 		}
 

@@ -67,16 +67,9 @@ function init() {
 				var txt_4_2 = Helper.createTextElement({id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: endframe_bottom})
 				var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: '100%', parent: endframe_bottom})
 					// var txt_5 = {}
-					var txt_5 = Helper.createTextElement([{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, parent: frame_5}, {id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8em', parent: frame_5}])
+					var txt_5 = Helper.createTextElement([{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, parent: frame_5}, {id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.9em', parent: frame_5}])
 					var cta_container = Helper.createTextElement([{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5}])
 					var txt_legal = Helper.createTextElement({id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: frame_5})
-
-						// var txt_5 = Helper.createTextElement([
-						// 	{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5},
-						// 	{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5},
-						// 	{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5},
-						// 	{id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: frame_5}
-						// ])
 
 		// Adjust
 
@@ -88,9 +81,6 @@ function init() {
 		TweenMax.set(endframe.childNodes, {position: 'relative', height: 'auto'})
 		TweenMax.set(frame_5.childNodes, {position: 'relative', height: 'auto'})
 		TweenMax.set(endframe_bottom.childNodes, {position: 'absolute', height: '100%', width: '100%'})
-		// TweenMax.set(txt_4, {height: height * 0.6 - logo_bottom.height, bottom: logo_bottom.height})
-		// TweenMax.set(txt_4, {y: (logo_top.height) / 2})
-		// TweenMax.set(frame_5, {height: height - logo_middle.height - 8, top: logo_middle.height + 5})
 		TweenMax.set(frame_5, {display: 'flex', flexDirection: 'column', justifyContent: 'space-around'})
 
 		var cta = cta_container.childNodes[0]
@@ -151,10 +141,6 @@ function init() {
 			.add('blink', '+=1')
 			.to(cta, 0.2, {backgroundColor: dc.FR5_TXT_4_COLOR}, 'blink')
 			.to(cta, 0.2, {backgroundColor: dc.FR5_TXT_3_COLOR})
-
-		// console.log(tl.duration())
-
-		// tl.play('frame_4')
 
 		// Interaction
 
