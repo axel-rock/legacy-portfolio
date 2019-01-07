@@ -75,6 +75,7 @@ function init() {
 
 		if (Helper.detectIE() && Helper.detectIE() == 11) {
 			TweenMax.set(cta_inner, {top: dc.FR5_TXT_3_SIZE * 0.1})
+			TweenMax.set(endframe_bottom, {width: 0, justifyContent: 'flex-start'})
 		}
 
 		var mask_1 = new Mask({source: img_1, colors: [config.duotone[0], config.duotone[1]]})

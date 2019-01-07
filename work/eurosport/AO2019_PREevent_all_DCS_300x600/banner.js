@@ -40,32 +40,16 @@ function init() {
 				{id: 'FR3_TXT_2', text: dc.FR3_TXT_2, color: dc.FR3_TXT_2_COLOR, fontSize: dc.FR3_TXT_2_SIZE, parent: frame_3}
 			])
 
-		// var container_top = Helper.createElement({id: 'container_top', width: width, height: limit, parent: banner})
-			// var frame_4 = Helper.createElement({id: 'frame_4', width: '100%', height: '100%', parent: container_top})
-			// 	var txt_4 = Helper.createTextElement([
-			// 		{id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_4},
-			// 		{id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: frame_4}
-			// 	])
-
 		var logo_bottom = Helper.createElement({id: 'logo_bottom', image: dc.ESPplayer_LT_logo.Url, left: 0, right: 0, bottom: 0, margin: '0 auto', parent: banner})
-
-		// var container_bottom = Helper.createElement({id: 'container_bottom', top: limit, width: width, height: height - limit, overflow: 'hidden', parent: banner})
-		// 	var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: '100%', parent: container_bottom})
-		// 		var txt_5 = Helper.createTextElement([
-		// 			{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, lineHeight: '0.9em', parent: frame_5},
-		// 			{id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.8', parent: frame_5},
-		// 			{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5},
-		// 			{id: 'FR5_TXT_4', text: dc.FR5_TXT_4, color: dc.FR5_TXT_4_COLOR, fontSize: dc.FR5_TXT_4_SIZE, lineHeight: '1em', letterSpacing: 0, fontFamily: 'Arial, Helvetica, sans-serif', fontWeight: '100', parent: container_bottom}
-		// 		])
 
 		var logo_top = Helper.createElement({id: 'logo_top', image: 'AO2018_logo.png', left: 0, right: 0, top: 20, margin: '0 auto', parent: banner})
 		var logo_middle = Helper.createElement({id: 'logo_middle', image: dc.ESPplayer_MG_logo.Url, left: 0, right: 0, margin: '0 auto', parent: banner})
 
 		var endframe = Helper.createElement({id: 'endframe', width: width, height: height - logo_middle.height, top: logo_middle.height, parent: banner})
 			var txt_4_1 = Helper.createTextElement({id: 'FR4_TXT_1', text: dc.FR4_TXT_1, color: dc.FR4_TXT_1_COLOR, fontSize: dc.FR4_TXT_1_SIZE, lineHeight: '0.9em', parent: endframe})
-			var endframe_bottom = Helper.createElement({id: 'endframe_bottom', width: '100%', parent: endframe})
+			var endframe_bottom = Helper.createElement({id: 'endframe_bottom', width: width, parent: endframe})
 				var txt_4_2 = Helper.createTextElement({id: 'FR4_TXT_2', text: dc.FR4_TXT_2, color: dc.FR4_TXT_2_COLOR, fontSize: dc.FR4_TXT_2_SIZE, lineHeight: '1em', top: '5px', parent: endframe_bottom})
-				var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: '100%', parent: endframe_bottom})
+				var frame_5 = Helper.createElement({id: 'frame_5', width: '100%', height: width, parent: endframe_bottom})
 					// var txt_5 = {}
 					var txt_5 = Helper.createTextElement([{id: 'FR5_TXT_1', text: dc.FR5_TXT_1, color: dc.FR5_TXT_1_COLOR, fontSize: dc.FR5_TXT_1_SIZE, parent: frame_5}, {id: 'FR5_TXT_2', text: dc.FR5_TXT_2, color: dc.FR5_TXT_2_COLOR, fontSize: dc.FR5_TXT_2_SIZE, lineHeight: '0.9em', parent: frame_5}])
 					var cta_container = Helper.createTextElement([{id: 'FR5_TXT_3', text: '', backgroundColor: dc.FR5_TXT_3_COLOR, parent: frame_5}])
@@ -92,6 +76,7 @@ function init() {
 
 		if (Helper.detectIE() && Helper.detectIE() == 11) {
 			TweenMax.set(cta_inner, {top: dc.FR5_TXT_3_SIZE * 0.1})
+			TweenMax.set(endframe_bottom, {width: 0, justifyContent: 'flex-start'})
 		}
 
 		var mask_1 = new Mask({source: img_1, colors: [config.duotone[0], config.duotone[1]]})
