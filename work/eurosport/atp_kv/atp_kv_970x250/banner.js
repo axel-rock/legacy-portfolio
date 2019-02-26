@@ -18,7 +18,7 @@ function init() {
 			'f3_txt_2.png',
 			'f3_txt_3.png',
 			'cta_txt.png',
-			'../atp_kv-assets/background_end.jpg',
+			'background_end.jpg',
 			// '../atp_kv-assets/txt_1.png',
 		]
 
