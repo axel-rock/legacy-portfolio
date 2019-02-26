@@ -93,7 +93,7 @@ function init() {
 			alignItems: 'center',
 			parent: banner,
 		})
-			var background = Helper.createElement({image: '../atp_kv-assets/background_end.jpg', retina: false, parent: frame_3_container})
+			var background = Helper.createElement({image: 'background_end.jpg', retina: false, parent: frame_3_container})
 			var f3_txt_1 = Helper.createElement({image: 'f3_txt_1.png', position: 'relative', parent: frame_3_container})
 			var f3_txt_2 = Helper.createElement({image: 'f3_txt_2.png', position: 'relative', parent: frame_3_container})
 			var f3_txt_3 = Helper.createElement({image: 'f3_txt_3.png', position: 'relative', parent: frame_3_container})
