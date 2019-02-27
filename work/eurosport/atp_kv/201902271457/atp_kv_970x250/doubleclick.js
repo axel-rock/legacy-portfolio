@@ -12,7 +12,7 @@ devDynamicContent.Eurosport__ATP_Feed[0].Reporting_Label = "test";
 devDynamicContent.Eurosport__ATP_Feed[0].Targeting_Column = "";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_1_1 = "<i class='eurosport'></i>";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_1_3 = "<i class='atp_1000'></i><i class='atp_500'></i><i class='atp_250'></i><i class='nitto_atp_finals'></i><i class='nextgen_atp_finals'></i><i class='australian_open'></i><i class='rolland_garos'></i><i class='us_open'></i>";
-devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1 = "NNIS <i class='atp_1000'></i> BNP PARIBAS OPEN <i class='atp_1000'></i> EUROSPORT    ";
+devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1 = "OF TENNIS <i class='atp_1000'></i> BNP PARIBAS OPEN <i class='atp_1000'></i> EUROSPORT    ";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1_COLOR = "#FFFFFF";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1_SIZE = 1;
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_2 = "BNP PARIBAS OPEN <i class='atp_1000'></i> INDIAN WELLS 4 - 17 MARS LIVE SUR EUROSPORT PLAYER";
