@@ -11,7 +11,7 @@ function init() {
 		fontFactor = 0.7,
 		images = [
 			'txt_1_2.png',
-			'txt_3_3.png',
+			// 'txt_3_3.png',
 			'background_end.jpg',
 		]
 
@@ -26,6 +26,7 @@ function init() {
 		var txt_2_2_width
 		var txt_2_3_width
 		var txt_3_1_width
+		var txt_3_2_rect
 		var txt_3_3_rect
 
 		TweenMax.set(border, {backgroundColor: dc.BG_1})
@@ -102,9 +103,10 @@ function init() {
 			var txt_3_1 = Helper.createTextElement({text: dc.TXT_3_1, height: 72, position: 'relative', parent: frame_3_container})
 			TweenMax.set(txt_3_1, {lineHeight: 0.88, marginTop: 0})
 			var txt_3_2 = Helper.createTextElement({text: dc.TXT_3_2, height: 40, position: 'relative', parent: frame_3_container})
-				// var txt_3_2_bar = Helper.createElement({width: '100%', height: 1, backgroundColor: '#ffffff', parent: txt_3_2})
+				var txt_3_2_bar = Helper.createElement({width: 0, height: 1, backgroundColor: '#ffffff', insertBefore: txt_3_2})
 			TweenMax.set(txt_3_2, {lineHeight: 0.88, marginTop: 0, backgroundColor: dc.BG_2, padding: '0 20px'})
-			var txt_3_3 = Helper.createElement({image: 'txt_3_3.png', position: 'relative', parent: frame_3_container})
+			var txt_3_3 = Helper.createTextElement({text: dc.TXT_3_3, height: 40, position: 'relative', parent: frame_3_container})
+			TweenMax.set(txt_3_3, {marginTop: '-.3em'})
 			var cta = Helper.createElement({borderRadius: '5px', position: 'relative', parent: frame_3_container})
 				var cta_frame = Helper.createElement({width: '100%', height: '100%', backgroundColor: '#4ee9a1', borderRadius: 5, parent: cta})
 				var cta_txt = Helper.createTextElement({text: dc.CTA, height: 24, padding: '7px 50px', position: 'relative', parent: cta})
@@ -118,7 +120,10 @@ function init() {
 			txt_2_2_width = txt_2_2.getBoundingClientRect().width
 			txt_2_3_width = txt_2_3.getBoundingClientRect().width
 			txt_3_1_width = txt_3_1.getBoundingClientRect().width
+			txt_3_2_rect = txt_3_2.getBoundingClientRect()
 			txt_3_3_rect = txt_3_3.getBoundingClientRect()
+
+			TweenMax.set(txt_3_2_bar, {width: txt_3_1_width, top: txt_3_2_rect.top + txt_3_2_rect.height / 2})
 
 			var ease = Power2.easeOut
 			var none = Power0.easeNone
@@ -167,10 +172,11 @@ function init() {
 				.fromTo(txt_3_3, 0.5, {y: -height * 0.5}, {y: height / 2 - txt_3_3_rect.top - txt_3_3_rect.height / 2}, 'frame_3')
 				.to(txt_3_3, 0.5, {y: 0, ease: Power2.easeInOut}, '+=0.5')
 				// .from()
-				.staggerFrom([background, txt_3_1, txt_3_2], 0.5, {opacity: 0}, 0.1, '-=0.5')
-				.from(cta_frame, 0.5, {scaleX: 0, ease: Power2.easeInOut}, '-=0.2')
+				.staggerFrom([background, txt_3_1, [txt_3_2, txt_3_2_bar]], 0.5, {opacity: 0}, 0.1, '-=0.5')
+				.from(txt_3_2_bar, 0.5, {scaleX: 0, ease: Power2.easeInOut}, '-=0.3')
+				.from(cta_frame, 0.5, {scaleX: 0, ease: Power2.easeInOut}, '-=0.5')
 
-			// tl.play('frame_3-=1')
+			// tl.play('frame_3')
 			// tl.pause('frame_1+=1')
 			// console.log(frame_2_container)
 
