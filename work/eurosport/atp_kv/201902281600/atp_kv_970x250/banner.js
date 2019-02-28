@@ -30,24 +30,6 @@ function init() {
 
 		TweenMax.set(border, {backgroundColor: dc.BG_1})
 
-		var frame_1_container = Helper.createElement({
-			id: 'frame_1_container',
-			width: width,
-			height: 150,
-			top: 50,
-			display: 'flex',
-			flexDirection: 'column',
-			justifyContent: 'space-around',
-			alignItems: 'center',
-			parent: banner,
-		})
-			// var f2_txt_1 = Helper.createElement({image: 'f2_txt_1.png', parent: frame_1_container})
-			var txt_1_1 = Helper.createTextElement({text: dc.TXT_1_1, height: 40, position: 'relative', parent: frame_1_container})
-			TweenMax.set(txt_1_1, {fontSize: '40px'})
-			var txt_1_2 = Helper.createElement({image: 'txt_1_2.png', position: 'relative', parent: frame_1_container})
-			var txt_1_3 = Helper.createTextElement({text: dc.TXT_1_3, fontSize: '40px', position: 'relative', parent: frame_1_container})
-			TweenMax.set(txt_1_3, {display: 'flex', justifyContent: 'space-around'})
-
 		var frame_2_container = Helper.createElement({
 			id: 'frame_2_container',
 			width: width,
@@ -83,6 +65,25 @@ function init() {
 				parent: frame_2_container
 			})
 			TweenMax.set(txt_2_3, {color: dc.TXT_2_3_COLOR})
+
+		var frame_1_container = Helper.createElement({
+			id: 'frame_1_container',
+			width: width,
+			height: height,
+			padding: '50px auto',
+			display: 'flex',
+			flexDirection: 'column',
+			justifyContent: 'space-around',
+			alignItems: 'center',
+			backgroundColor: dc.BG_1,
+			parent: banner,
+		})
+			// var f2_txt_1 = Helper.createElement({image: 'f2_txt_1.png', parent: frame_1_container})
+			var txt_1_1 = Helper.createTextElement({text: dc.TXT_1_1, height: 40, position: 'relative', parent: frame_1_container})
+			TweenMax.set(txt_1_1, {fontSize: '40px'})
+			var txt_1_2 = Helper.createElement({image: 'txt_1_2.png', position: 'relative', parent: frame_1_container})
+			var txt_1_3 = Helper.createTextElement({text: dc.TXT_1_3, fontSize: '40px', position: 'relative', parent: frame_1_container})
+			TweenMax.set(txt_1_3, {display: 'flex', justifyContent: 'space-around'})
 
 		var frame_3_container = Helper.createElement({
 			id: 'frame_3_container',
@@ -129,20 +130,20 @@ function init() {
 				.add(animateLogos(txt_1_3.querySelectorAll('i')), 'frame_1')
 
 				.add('frame_2_1', '+=0.5')
-				.from(frame_2_container, 0.2, {opacity: 0}, 'frame_2_1')
-				.add(animatePlayer(player_1, 1), 'frame_2_1')
-				.to(frame_1_container, 0.2, {opacity: 0}, 'frame_2_1+=0.2')
+				// .from(frame_2_container, 0.5, {opacity: 0}, 'frame_2_1')
+				.to(frame_1_container, 0.3, {opacity: 0, ease: Power2.easeIn}, 'frame_2_1')
+				.add(animatePlayer(player_1, 1), 'frame_2_1+=0.3')
 				.fromTo(
 					txt_2_1,
-					speed * 3,
-					{x: 0},
+					speed * 3 + 0.3,
+					{x: 200},
 					{x: -(txt_2_1_width - width) / 2 / total_size, ease: none},
 					'frame_2_1'
 				)
 
-				.add('frame_2_2', 'frame_2_1+=' + speed)
+				.add('frame_2_2', 'frame_2_1+=' + (speed + 0.3))
 				.add(animatePlayer(player_2, -1), 'frame_2_2')
-				.to(frame_2_container, 0.1, {scale: 1 / (dc.TXT_2_1_SIZE + dc.TXT_2_2_SIZE)}, 'frame_2_2')
+				.to(frame_2_container, 0.3, {scale: 1 / (dc.TXT_2_1_SIZE + dc.TXT_2_2_SIZE)}, 'frame_2_2')
 				.fromTo(
 					txt_2_2,
 					speed * 2,
@@ -153,7 +154,7 @@ function init() {
 
 				.add('frame_2_3', 'frame_2_2+=' + speed)
 				.add(animatePlayer(player_3, 1), 'frame_2_3')
-				.to(frame_2_container, 0.1, {scale: 1 / total_size}, 'frame_2_3')
+				.to(frame_2_container, 0.3, {scale: 1 / total_size}, 'frame_2_3')
 				.fromTo(
 					txt_2_3,
 					speed,
