@@ -130,7 +130,6 @@ function init() {
 				.add(animateLogos(txt_1_3.querySelectorAll('i')), 'frame_1')
 
 				.add('frame_2_1', '+=0.5')
-				// .from(frame_2_container, 0.5, {opacity: 0}, 'frame_2_1')
 				.to(frame_1_container, 0.3, {opacity: 0, ease: Power2.easeIn}, 'frame_2_1')
 				.add(animatePlayer(player_1, 1), 'frame_2_1+=0.3')
 				.fromTo(
@@ -162,11 +161,6 @@ function init() {
 					{x: -(txt_2_3_width - width) / 2 / total_size, ease: none},
 					'frame_2_3'
 				)
-
-				// .add('frame_2_4', 'frame_2_3+=' + (speed - 0.3))
-				// .to(txt_2_1, 0.3, {x: '-=' + width * 4, skewX: '-30deg', scaleY: 1.2, opacity: 0, ease: Power1.easeIn}, 'frame_2_4')
-				// .to(txt_2_2, 0.3, {x: '+=' + width * 3, skewX: '+30deg', scaleY: 1.2, opacity: 0, ease: Power1.easeIn}, 'frame_2_4')
-				// .to(txt_2_3, 0.3, {x: '-=' + width * 2, skewX: '-30deg', scaleY: 1.2, opacity: 0, ease: Power1.easeIn}, 'frame_2_4')
 
 				.add('frame_3', '-=0.3')
 				.from(frame_3_container, 0.5, {y: height}, 'frame_3')
