@@ -15,7 +15,7 @@ devDynamicContent.Eurosport__ATP_Feed[0].TXT_1_3 = "<i class='atp_1000'></i><i c
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1 = "<i class='atp_1000'></i> BNP PARIBAS OPEN <i class='atp_1000'></i> EUROSPORT";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1_COLOR = "#FFFFFF";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_1_SIZE = 1;
-devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_2 = "BNP PARIBAS OPEN <i class='atp_1000'></i> INDIAN WELLS 4 - 17 MARS LIVE SUR EUROSPORT PLAYER";
+devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_2 = "BNP PARIBAS OPEN <i class='atp_1000'></i> INDIAN WELLS <i class='space'></i> 4 - 17 MARS LIVE SUR EUROSPORT PLAYER";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_2_COLOR = "#3f3359";
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_2_SIZE = 0.3;
 devDynamicContent.Eurosport__ATP_Feed[0].TXT_2_3 = "<i class='atp_1000'></i> EUROSPORT HOME OF TENNIS <i class='atp_1000'></i> BNP PARIBAS OPEN";
