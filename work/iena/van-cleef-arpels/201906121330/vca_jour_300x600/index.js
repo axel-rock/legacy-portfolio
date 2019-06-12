@@ -41,7 +41,7 @@ function init() {
 		var product = Helper.createElement({image: 'images/product.jpg', top: 30, parent: clouds})
 		var product_mask = Helper.createElement({image: 'images/product_mask.png', parent: clouds})
 		var logo = Helper.createElement({image: 'images/logo.png', parent: clouds})
-		var cloud_2 = Helper.createElement({image: 'images/cloud_1.jpg', bottom: 0, left: width * 1.5, scaleX: -1.5, scaleY: 1.5, retina: false, parent: clouds})
+		var cloud_2 = Helper.createElement({image: 'images/cloud_1.jpg', bottom: 100, left: width * 1.6, scaleX: -1.5, scaleY: 1.5, retina: false, parent: clouds})
 		var cloud_2_mask = Helper.createElement({image: 'images/cloud_1_mask.png', retina: false, parent: clouds})
 		var bird = Helper.createElement({image: 'images/bird.png', transformOrigin: '50% 100%', parent: clouds})
 		var cloud_1 = Helper.createElement({image: 'images/cloud_1.jpg', bottom: 0, right: width, retina: false, parent: clouds})
@@ -52,20 +52,17 @@ function init() {
 		new Helper.mask(cloud_1, cloud_1_mask);
 		new Helper.mask(cloud_2, cloud_2_mask);
 
-		TweenMax.set(cloud_2)
-
 		tl
 		.to(product, 3.5, {scale: 1.2, ease: Power0.easeNone})
 
 		.to(cloud_1, 2.8, {x: 630, ease: Power0.easeNone}, 0.7)
-		.to(cloud_2, 3, {x: -1000, ease: Power0.easeNone}, 0.5)
+		.to(cloud_2, 2.8, {x: -1000, ease: Power0.easeNone}, 0.5)
 		.fromTo(bird, 2, {rotation: 35}, {rotation: -25, ease: Power0.easeNone}, 1.8)
 
 		.from(scene, 0.2, {opacity: 0, ease: Power0.easeNone}, 3)
 		.to(product, 0.3, {opacity: 0, ease: Power0.easeNone}, 3)
 		.to(clouds, 0.3, {opacity: 0, ease: Power0.easeNone}, 3)
 
-		// .to(product, 0.5, {opacity: 0, ease: Power0.easeNone}, 3)
 		.to(scene, 3, {scale: 1.2, ease: Power1.easeIn}, 2.8)
 		.fromTo(character_girl, 2.4, {rotation: -10}, {rotation: 2, ease: Power0.easeNone}, 2.8)
 		.fromTo(character_boy, 2.4, {rotation: 10}, {rotation: -2, ease: Power0.easeNone}, 2.8)
