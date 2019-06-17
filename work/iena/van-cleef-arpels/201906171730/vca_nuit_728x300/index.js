@@ -48,11 +48,13 @@ function init() {
 
 		TweenMax.set([character_girl, character_boy], {clip: 'rect(' + (height * 0.1) + 'px,' + (width * 0.9) + 'px,' + (height * 0.9) + 'px,' + (width * 0.1) + 'px)'}) // Firefox overflow fix
 
+		console.log()
+
 		tl
 		.to(frame_1_scale, 3.5, {scale: 1.2, ease: Power0.easeNone})
 
 		.from(city_overlay, 0.3, {opacity: 0, ease: Power0.easeNone}, 1.2)
-		.from(city_overlay, 3.8, {y: 334, ease: Power0.easeNone}, 0.7)
+		.fromTo(city_overlay, 3.8, {y: city_overlay.offsetHeight - height, scale: 1}, {y: -city_overlay.offsetHeight * 0.1, scale: 1.2, ease: Power0.easeNone}, 0.7)
 		.to(city_overlay, 0.5, {opacity: 0, ease: Power0.easeNone}, 4)
 
 		.from(scene, 0.2, {opacity: 0, ease: Power0.easeNone}, 3.5)
