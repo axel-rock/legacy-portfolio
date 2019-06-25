@@ -1,0 +1,32 @@
+// <sup>*</sup>
+
+var dc = {
+	TXT_1_1: 'WARNING',
+	// TXT_1_1_STYLE: '',
+	TXT_1_2: 'EUROSPORT’S IMMERSIVE<br/>TOUR DE FRANCE COVERAGE<br/>MAY CAUSE THE FOLLOWING:',
+	// TXT_1_2_STYLE: '',
+	TXT_2: 'AGORAPHOBIA',
+	// TXT_2_STYLE: '',
+	TXT_3: 'ADRENALINE SPIKES',
+	// TXT_3_STYLE: '',
+	TXT_4: 'EMOTIONAL OUTBURSTS',
+	// TXT_4_STYLE: '',
+	TXT_5: 'NOT FOR THE<br/>FAINT-HEARTED',
+	// TXT_5_STYLE: '',
+	TXT_6_1: 'TOUR DE FRANCE',
+	// TXT_6_1_STYLE: '',
+	TXT_6_2: '6-28 JULY LIVE',
+	// TXT_6_2_STYLE: '',
+	TXT_7_1: '4.99€',
+	// TXT_7_1_STYLE: '',
+	TXT_7_2: 'PER MONTH',
+	// TXT_7_2_STYLE: '',
+	TXT_CTA: 'SUBSCRIBE NOW',
+	// TXT_CTA_STYLE: '',
+	TXT_LEGAL: '£ 59.88 TOTAL PRICE. SUBSCRIPTION REQUIRED. MIN.<br/>TERM AND T&CS APPLY.',
+	// TXT_LEGAL_STYLE: '',
+}
+
+// Eurosport Internal Specific
+if (window['adclick']) {
+}
