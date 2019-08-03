@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+
+  body {
+    background-color: #000;
+    color: #212121;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    font-family: "SF Pro Text", -apple-system, -apple-system-font, "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
+    padding: 2rem;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  #banners {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    float: right;
+  }
+
+  iframe {
+    border: 0;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  h2, h3 {
+    font-size: 3.6rem;
+    line-height: 3.9rem;
+    font-weight: 600;
+    letter-spacing: -0.14px;
+    text-rendering: optimizeLegibility;
+  }
+
+  h2 {
+    color: rgb(40, 175, 255);
+  }
+
+  h3 {
+    color: rgb(238, 238, 238);
+    margin-bottom: 1.5rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button, a {
+    color: rgb(238, 238, 238);
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid #494949;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    outline: none;
+    line-height: 10px;
+    font-size: 10px;
+  }
+
+  button:hover, a:hover, button.current, a.current {
+    background: rgb(40, 175, 255);
+  }
+  </style>
+</head>
+<body>
+  <!-- <h2>Eurosport</h2> -->
+  <!-- <h3>Business As Usual</h3> -->
+
+  <div id="sizes"></div>
+  <div id="languages"></div>
+  <div id="controls">
+    <button onclick="pause()">Pause</button>
+    <button onclick="resume()">Resume</button>
+  </div>
+
+  <div id="banners">
+  </div>
+
+  <script type="text/javascript">
+  let container = document.getElementById('banners')
+  let languages = ['cz', 'dk', 'es', 'fi', 'fr', 'gr', 'it', 'nl', 'no', 'pl', 'pt', 'ro', 'ru', 'se', 'tu', 'uk']
+  let sizes = ['160x600', '300x600', '300x250', '336x280', '728x90']
+  let frames = 9
+  let iframes = []
+  var url_string = window.location.href
+  var url = new URL(url_string);
+
+  for (let i = 0; i < languages.length; i++) {
+    let lang = languages[i]
+    let button = document.createElement('a')
+    button.textContent = lang.toUpperCase()
+    button.href = '?lang=' + lang
+    if (url.searchParams.get('lang') && url.searchParams.get('lang') == lang)
+      button.classList.add('current')
+    document.getElementById('languages').appendChild(button)
+  }
+
+  for (let i = 0; i < sizes.length; i++) {
+    let size = sizes[i]
+    let button = document.createElement('a')
+    button.textContent = size.toUpperCase()
+    button.href = '?size=' + size
+    if (url.searchParams.get('size') && url.searchParams.get('size') == size)
+      button.classList.add('current')
+    document.getElementById('sizes').appendChild(button)
+  }
+
+  for (var i = 1; i < frames; i++) {
+    let button = document.createElement('button')
+    button.textContent = 'Frame ' + i
+    button.frame = i
+    button.onclick = (e) => pause('frame_' + e.target.frame + '+=1')
+    document.getElementById('controls').appendChild(button)
+  }
+
+  function createFrames(_languages, _sizes) {
+    container.innerHTML = ``
+    iframes = []
+    for (let i = 0; i < _languages.length; i++) {
+      for (let j = 0; j < _sizes.length; j++) {
+        let lang = _languages[i]
+        let size = _sizes[j]
+        let iframe = document.createElement('iframe')
+        iframe.width = size.split('x')[0]
+        iframe.height = size.split('x')[1]
+        iframe.onload = () => {
+          iframe.contentWindow.banner_tl.pause()
+          iframes.push(iframe)
+          if (iframes.length == _languages.length * _sizes.length)
+            setTimeout(resume, 500)
+        }
+        iframe.src = `eurosport_bau-assets/${lang}_bau_${size}/index.html`
+        // iframe.src = `eurosport_bau-assets/${lang}/${lang}_bau_${size}/index.html`
+        container.appendChild(iframe)
+      }
+    }
+  }
+
+  function pause(pos) {
+    for (var i in iframes) {
+      iframes[i].contentWindow.banner_tl.pause(pos)
+    }
+  }
+
+  function resume() {
+    for (let i = 0; i < iframes.length; i++) {
+      if (iframes[i].contentWindow.banner_tl.time() == iframes[i].contentWindow.banner_tl.duration())
+      iframes[i].contentWindow.banner_tl.play(0)
+      else
+      iframes[i].contentWindow.banner_tl.play()
+    }
+  }
+
+  if (url.searchParams.get('lang'))
+    createFrames([url.searchParams.get('lang')], sizes)
+  else if (url.searchParams.get('size'))
+    createFrames(languages, [url.searchParams.get('size')])
+  </script>
+</body>
+</html>

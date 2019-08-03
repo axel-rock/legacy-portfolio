@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="ad.size" content="width=300, height=250">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>BAU</title>
+		<link rel="shortcut icon" href="#">
+		<link rel="stylesheet" href="eurosport_logos.css">
+		<style>
+			@font-face {
+				font-family: 'ESP AlphaHeadline Tab';
+				src: url('hinted-ESPAlphaHeadlineTab-Bold.woff2') format('woff2'),
+					url('hinted-ESPAlphaHeadlineTab-Bold.woff') format('woff');
+				font-weight: bold;
+				font-style: normal;
+			}
+
+			@font-face {
+			    font-family: 'Circular Std';
+			    src: url('CircularStd-Bold.woff2') format('woff2'),
+			        url('CircularStd-Bold.woff') format('woff');
+			    font-weight: bold;
+			    font-style: normal;
+			}
+
+			body {
+				margin: 0;
+				font-family: 'ESP AlphaHeadline Tab';
+				font-weight: bold;
+				color: #fff;
+			}
+
+			a, a:visited {
+				color: inherit;
+			}
+
+			.icon-space:before { content: ''; }
+		</style>
+		<script src='https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.18.0_499ba64a23378545748ff12d372e59e9_min.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="bigtext.js"></script>
+		<script>var params = window.location.search.substr(1).split('&'); window.adclick = params[0];</script>
+		<script type="text/javascript">var clickTag = "https://www.eurosport.fr"; </script>
+	</head>
+	<body onload="init()">
+		<a href="#clicktag" id="EUROSPORT_ADTECH_clicktag" target="_blank"></a>
+		<script src="content.js"></script>
+		<script src="helper.js"></script>
+		<script src="banner.js"></script>
+		<script type="text/javascript">
+			clicktag = window.adclick + 'https://www.eurosport.fr/'; document.getElementById('EUROSPORT_ADTECH_clicktag').setAttribute('href', clicktag);
+		</script>
+		<script type="text/javascript">
+			// Use DCM ClickTag if Eurosport's adclick is not detected
+			if (!window['adclick'])
+				document.getElementById('EUROSPORT_ADTECH_clicktag').setAttribute('href', 'javascript:window.open(window.clickTag)');
+		</script>
+	</body>
+</html>
