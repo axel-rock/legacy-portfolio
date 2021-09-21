@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Friends';
+  src: url('gabrwffr.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#output {
+  font-family: 'Friends';
+  font-size: 100px;
+  text-align: center;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* display: none; */
+}
+
+#output > span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 70px; /* <-- adjust this */
+}
+
+#output > span:nth-child(3n) {
+  color: #fd0006;
+}
+
+#output > span:nth-child(3n + 1) {
+  color: #00b4ec;
+}
+#output > span:nth-child(3n + 2) {
+  color: #ffba00;
+}
