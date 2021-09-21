@@ -10,10 +10,18 @@
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <!-- <canvas id="canvas" width="1920" height="1080"></canvas> -->
-    <div id="output"></div>
-    <input id="input" type="text" />
+  <body class="inverted">
+    <div id="output" class="shadow"></div>
+    <label for="input">Type your text here</label>
+    <input id="input" type="text" value="Friends" />
+    <div>
+      <input id="invert" type="checkbox" checked />
+      <label for="invert">Invert colors</label>
+    </div>
+    <div>
+      <input id="shadow" type="checkbox" checked />
+      <label for="shadow">Add shadow</label>
+    </div>
     <button id="button">Download</button>
   </body>
 </html>
