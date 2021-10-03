@@ -11,7 +11,7 @@ subtitle: Senior creative developer
 description: > # this means to ignore newlines until "baseurl:"
   Hi! I'm Axel
   I am a creative developer and traveller from France.
-  I now live in Stockholm and work at Bannerboy.
+  I now live in Nantes and work at Bannerboy.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://rock.bzh" # the base hostname & protocol for your site
 
