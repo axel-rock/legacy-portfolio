@@ -1,0 +1,74 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Nextories</title>
+    <style>
+      body {
+        padding: 1em;
+      }
+      main {
+        display: grid;
+        justify-content: center;
+        gap: 1em;
+        grid-template-areas:
+          'b300x250 b1000x250 b1000x250'
+          'b300x600 b320x150 b320x100';
+      }
+
+      iframe {
+        border: none;
+        outline: none;
+      }
+
+      #b300x250 {
+        grid-area: b300x250;
+      }
+      #b1000x250 {
+        grid-area: b1000x250;
+      }
+      #b300x600 {
+        grid-area: b300x600;
+      }
+      #b320x100 {
+        grid-area: b320x100;
+      }
+      #b320x150 {
+        grid-area: b320x150;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <iframe
+        id="b300x250"
+        src="./build/nextories_300x250/index.html"
+        width="300"
+        height="250"
+      ></iframe>
+      <iframe
+        id="b1000x250"
+        src="./build/nextories_1000x250/index.html"
+        width="1000"
+        height="250"
+      ></iframe>
+      <iframe
+        id="b300x600"
+        src="./build/nextories_300x600/index.html"
+        width="300"
+        height="600"
+      ></iframe>
+      <iframe
+        id="b320x100"
+        src="./build/nextories_320x100/index.html"
+        width="320"
+        height="100"
+      ></iframe>
+      <iframe
+        id="b320x150"
+        src="./build/nextories_320x150/index.html"
+        width="320"
+        height="150"
+      ></iframe>
+    </main>
+  </body>
+</html>

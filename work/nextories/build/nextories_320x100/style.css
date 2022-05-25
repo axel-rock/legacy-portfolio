@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+}
+.element {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#banner {
+  overflow: hidden;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 320px;
+  height: 100px;
+  cursor: pointer;
+  box-sizing: border-box;
+  opacity: 0;
+}
+#frame1,
+#frame2,
+#frame3,
+#frame4 {
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 100px;
+}
+#img1 {
+  left: 0;
+  top: 0;
+  background-image: url(img1.jpg);
+  width: 320px;
+  height: 100px;
+}
+#txt1 {
+  left: 53px;
+  top: 8px;
+  width: 213px;
+  height: 86px;
+}
+#txt11container {
+  left: -13px;
+  top: 55px;
+  width: 240px;
+  height: 96px;
+}
+#txt11 {
+  left: 6px;
+  top: -8px;
+  background-image: url(txt11.png);
+  width: 228px;
+  height: 46px;
+}
+#txt10container {
+  left: -13px;
+  top: -49px;
+  width: 240px;
+  height: 105px;
+}
+#txt10 {
+  left: 9px;
+  top: 41px;
+  background-image: url(txt10.png);
+  width: 220px;
+  height: 69px;
+}
+#img2 {
+  left: 0;
+  top: 0;
+  background-image: url(img2.jpg);
+  width: 320px;
+  height: 100px;
+}
+#txt2 {
+  left: 56px;
+  top: 5px;
+  width: 205px;
+  height: 87px;
+}
+#txt20container {
+  left: 43px;
+  top: 0;
+  width: 120px;
+  height: 21px;
+}
+#txt20 {
+  left: 0;
+  top: 0;
+  background-image: url(txt20.png);
+  width: 120px;
+  height: 21px;
+}
+#txt21container {
+  left: 0;
+  top: 28px;
+  width: 205px;
+  height: 29px;
+}
+#txt21 {
+  left: 0;
+  top: 0;
+  background-image: url(txt21.png);
+  width: 205px;
+  height: 29px;
+}
+#txt22container {
+  left: 2px;
+  top: 60px;
+  width: 203px;
+  height: 27px;
+}
+#txt22 {
+  left: 0;
+  top: 0;
+  background-image: url(txt22.png);
+  width: 203px;
+  height: 27px;
+}
+#txt3 {
+  left: 107px;
+  top: 26px;
+  width: 187px;
+  height: 47px;
+}
+#txt31container {
+  left: 16px;
+  top: 23px;
+  width: 154px;
+  height: 24px;
+}
+#txt31 {
+  left: -8px;
+  top: -9px;
+  background-image: url(txt31.png);
+  width: 170px;
+  height: 40px;
+}
+#txt30container {
+  left: 0;
+  top: 0;
+  width: 187px;
+  height: 15px;
+}
+#txt30 {
+  left: -9px;
+  top: -8px;
+  background-image: url(txt30.png);
+  width: 204px;
+  height: 30px;
+}
+#cards {
+  left: 12px;
+  top: 25px;
+  width: 75px;
+  height: 46px;
+}
+#img4 {
+  left: 0;
+  top: 0;
+  background-image: url(img4.jpg);
+  width: 320px;
+  height: 100px;
+}
+#txt4 {
+  left: 25px;
+  top: 21px;
+  width: 271px;
+  height: 58px;
+}
+#txt41 {
+  left: 8px;
+  top: 7px;
+  background-image: url(txt41.png);
+  width: 256px;
+  height: 20px;
+}
+#txt40 {
+  left: 0;
+  top: 0;
+  background-image: url(txt40.png);
+  width: 271px;
+  height: 58px;
+}
+#rating {
+  left: 89px;
+  top: 53px;
+  width: 139px;
+  height: 26px;
+}
+#logo {
+  left: 64px;
+  top: 31px;
+  background-image: url(logo.png);
+  width: 189px;
+  height: 38px;
+}
+#banner,
+#cover,
+#frame3 {
+  background-color: #253163;
+}
+#border {
+  border: 1px solid #ddd;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+#border,
+#cover {
+  width: 320px;
+  height: 100px;
+  pointer-events: none;
+}
+#txt1 > *,
+#txt2 > *,
+#txt3 > * {
+  overflow: hidden;
+}
