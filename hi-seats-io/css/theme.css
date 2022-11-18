@@ -1,0 +1,203 @@
+:root {
+	/* Spacing */
+
+	--gap: 1em;
+	--line-width: 0.5px;
+	--content-max-width: 900px;
+
+	/* Colors */
+
+	--hue: 260;
+
+	--background-color-0: hsla(260, 100%, 0%, 1);
+	--background-color-1: hsla(260, 100%, 10%, 1);
+	--background-color-2: hsla(260, 100%, 20%, 1);
+	--background-color-3: hsla(260, 100%, 30%, 1);
+	--background-color-4: hsla(260, 100%, 40%, 1);
+	--background-color-5: hsla(260, 100%, 50%, 1);
+	--background-color-6: hsla(260, 100%, 60%, 1);
+	--background-color-7: hsla(260, 100%, 70%, 1);
+	--background-color-8: hsla(260, 100%, 80%, 1);
+	--background-color-9: hsla(260, 100%, 90%, 1);
+
+	--color-0: hsla(260, 0%, 100%, 1);
+	--color-1: hsla(260, 1%, 90%, 1);
+	--color-2: hsla(260, 2%, 80%, 1);
+	--color-3: hsla(260, 3%, 70%, 1);
+	--color-4: hsla(260, 4%, 60%, 1);
+	--color-5: hsla(260, 5%, 50%, 1);
+	--color-6: hsla(260, 6%, 40%, 1);
+	--color-7: hsla(260, 7%, 30%, 1);
+	--color-8: hsla(260, 8%, 20%, 1);
+	--color-9: hsla(260, 9%, 10%, 1);
+
+	--gradient: linear-gradient(32deg, #28d6e6 0%, #5c49eb 42%, #dc61c1 63%, #fe562f 78%, #fcf433 100%);
+}
+
+@media (prefers-color-scheme: light) {
+	:root:not(:has(#theme-selector > [value='dark']:checked)) {
+		--background-color-0: hsla(260, 20%, 100%, 1);
+		--background-color-1: hsla(260, 20%, 90%, 1);
+		--background-color-2: hsla(260, 20%, 80%, 1);
+		--background-color-3: hsla(260, 20%, 70%, 1);
+		--background-color-4: hsla(260, 20%, 60%, 1);
+		--background-color-5: hsla(260, 20%, 50%, 1);
+		--background-color-6: hsla(260, 20%, 40%, 1);
+		--background-color-7: hsla(260, 20%, 30%, 1);
+		--background-color-8: hsla(260, 20%, 20%, 1);
+		--background-color-9: hsla(260, 20%, 10%, 1);
+
+		--color-0: hsla(260, 0%, 0%, 1);
+		--color-1: hsla(260, 1%, 10%, 1);
+		--color-2: hsla(260, 2%, 20%, 1);
+		--color-3: hsla(260, 3%, 30%, 1);
+		--color-4: hsla(260, 4%, 40%, 1);
+		--color-5: hsla(260, 5%, 50%, 1);
+		--color-6: hsla(260, 6%, 60%, 1);
+		--color-7: hsla(260, 7%, 70%, 1);
+		--color-8: hsla(260, 8%, 80%, 1);
+		--color-9: hsla(260, 9%, 90%, 1);
+	}
+}
+
+:root:has(#theme-selector > [value='light']:checked) {
+	--background-color-0: hsla(260, 20%, 100%, 1);
+	--background-color-1: hsla(260, 20%, 90%, 1);
+	--background-color-2: hsla(260, 20%, 80%, 1);
+	--background-color-3: hsla(260, 20%, 70%, 1);
+	--background-color-4: hsla(260, 20%, 60%, 1);
+	--background-color-5: hsla(260, 20%, 50%, 1);
+	--background-color-6: hsla(260, 20%, 40%, 1);
+	--background-color-7: hsla(260, 20%, 30%, 1);
+	--background-color-8: hsla(260, 20%, 20%, 1);
+	--background-color-9: hsla(260, 20%, 10%, 1);
+
+	--color-0: hsla(260, 0%, 0%, 1);
+	--color-1: hsla(260, 1%, 10%, 1);
+	--color-2: hsla(260, 2%, 20%, 1);
+	--color-3: hsla(260, 3%, 30%, 1);
+	--color-4: hsla(260, 4%, 40%, 1);
+	--color-5: hsla(260, 5%, 50%, 1);
+	--color-6: hsla(260, 6%, 60%, 1);
+	--color-7: hsla(260, 7%, 70%, 1);
+	--color-8: hsla(260, 8%, 80%, 1);
+	--color-9: hsla(260, 9%, 90%, 1);
+}
+
+html {
+	color: var(--color-2);
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+
+	background: var(--background-color-1);
+	background: radial-gradient(farthest-corner, var(--background-color-1) 0%, var(--background-color-0) 100%);
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 2.8rem;
+	font-weight: 300;
+}
+
+h2 {
+	color: var(--color-1);
+	font-weight: 400;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+}
+
+h3 {
+	color: var(--color-1);
+	font-weight: 500;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+}
+
+p + p,
+ul:not(.no-bullet) li + li {
+	margin-top: 1.1em;
+}
+
+body {
+	/* font-size: 1.6rem; */
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+header,
+footer {
+	color: var(--color-1);
+}
+
+header > a.active,
+footer > a.active {
+	color: var(--color-1);
+}
+
+header {
+	border-bottom: solid var(--line-width) var(--color-7);
+}
+
+footer {
+	border-top: solid var(--line-width) var(--color-7);
+}
+
+hr {
+	background-image: repeating-linear-gradient(
+		45deg,
+		currentcolor 0%,
+		currentcolor calc(var(--line-width) * 4),
+		transparent calc(var(--line-width) * 4),
+		transparent calc(var(--line-width) * 12)
+	);
+	height: 48px;
+	border: 0;
+	width: 100%;
+}
+
+dialog {
+	color: var(--color-1);
+	background-color: var(--background-color-1);
+}
+
+button {
+	border-radius: 2em;
+	font-weight: bold;
+	color: var(--color-1);
+	background: linear-gradient(160deg, var(--background-color-2), var(--background-color-3));
+}
+
+button:hover {
+	color: var(--color-0);
+	background: linear-gradient(160deg, var(--background-color-3), var(--background-color-4));
+	box-shadow: 0 0 1em hsla(var(--hue), 100%, 50%, 0.75);
+}
+
+/* Utility classes */
+
+.rainbow {
+	background: var(--gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+dfn,
+time {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+}
+
+dfn:after,
+time:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0.07em;
+	height: 0.1em;
+	width: 100%;
+	background: var(--gradient);
+	z-index: -1;
+	transition: height 0.25s cubic-bezier(0.6, 0, 0.4, 1);
+}

@@ -1,0 +1,107 @@
+@import 'reset.css';
+@import 'theme.css';
+
+html {
+	overflow: hidden;
+}
+
+body {
+	padding: 0 calc(var(--gap) * 2);
+	margin: 0;
+	display: grid;
+	flex-direction: column;
+	gap: 1em;
+	height: 100vh;
+	scroll-snap-type: proximity;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y proximity;
+	overflow: scroll;
+}
+
+/* main {
+	display: grid;
+	align-self: center;
+	justify-content: center;
+	flex-grow: 1;
+	width: 100%;
+	display: contents;
+} */
+
+section {
+	scroll-snap-align: start;
+	font-size: clamp(1rem, 4vw, 1.5rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	border-top: solid var(--line-width) var(--color-7);
+}
+
+section:first-child {
+	border-top: unset;
+}
+
+section:first-child h1 {
+	font-size: 22vw;
+	line-height: 1em;
+}
+
+section > * {
+	align-self: center;
+}
+
+a {
+	color: currentcolor;
+	cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+	max-width: max(66ch, 100vh);
+	justify-self: center;
+}
+
+footer {
+	display: flex;
+	align-items: baseline;
+	gap: 1em;
+	padding: 1em 0;
+	scroll-snap-align: end;
+}
+
+footer label,
+footer select {
+	color: currentcolor;
+}
+
+.center {
+	text-align: center;
+}
+
+.center :is(h1, h2, h3, p, ul) {
+	align-self: center;
+}
+
+ul.no-bullet {
+	display: flex;
+	place-content: center;
+	gap: var(--gap);
+}
+
+@media (max-width: 160ch) {
+	ul.no-bullet {
+		flex-direction: column;
+	}
+
+	ul.no-bullet > li {
+		margin-top: 0em;
+	}
+}
+
+ul.no-bullet .link {
+	font-size: 0.5em;
+	line-height: 0.5em;
+}

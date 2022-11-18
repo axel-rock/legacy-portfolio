@@ -3,48 +3,61 @@
 
 {% include header.html %}
 
-            <article id="intro" class="box center">
-                <h1>Hi! I'm Axel</h1>
-                <ul class="tag">
-                    <li>JavaScript</li>
-                    <li>Cloud</li>
-                    <li>Performance</li>
-                    <li>Travel</li>
-                    <li>Challenge</li>
-                </ul>
-                <p>I am a {{ site.time | date: '%Y' | minus: 1991 }} years old creative developer and traveller from France.<br/>
-                Open to new opportunities.</p>
-                <p class="center"><a data-scroll href="#contact" alt="contact anchor link" class="action">Get in touch!</a></p>
-            </article>
+<article id="intro" class="box center">
+	<h1>Hi! I'm Axel</h1>
+	<ul class="tag">
+		<li>JavaScript</li>
+		<li>Cloud</li>
+		<li>Performance</li>
+		<li>Travel</li>
+		<li>Challenge</li>
+	</ul>
+	<p>
+		I am a {{ site.time | date: '%Y' | minus: 1991 }} years old creative developer and traveller from France.<br />
+		Open to new opportunities.
+	</p>
+	<p class="center"><a data-scroll href="#contact" alt="contact anchor link" class="action">Get in touch!</a></p>
+</article>
 
-            <section>
-                <h1>Take a look at my work</h1>
+<section>
+	<h1>Take a look at my work</h1>
 
-                {% for post in site.posts %}
-                    {{ post.content }}
-                {% endfor %}
+	{% for post in site.posts %} {{ post.content }} {% endfor %}
+</section>
 
-            </section>
+<section id="resume" class="box center grey">
+	<h1>My résumé in a nutshell</h1>
 
-            <section id="resume" class="box center grey">
-                <h1>My résumé in a nutshell</h1>
+	<h2>Work</h2>
+	<ul class="no-bullet">
+		<li><b>November 2016 - Today</b><br />Senior creative developer - Remote</li>
+		<li>
+			<b>May 2015 - November 2016</b><br />Senior creative developer -
+			<a href="http://bannerboy.com" title="Bannerboy" target="_blank">Bannerboy</a> - Stockholm, Sweden
+		</li>
+		<li>
+			<b>Summer 2014</b><br />iOS developer -
+			<a href="http://b-i.com" title="Blue Infinity's website" target="_blank">Blue Infinity</a> - Geneva, Switzerland
+		</li>
+		<li>
+			<b>2012-2014</b><br />Digital designer and producer -
+			<a href="http://laturbine-sciences.fr" title="La Turbine's website" target="_blank">La Turbine</a> - Annecy,
+			France
+		</li>
+		<li>
+			<b>2011-2012</b><br />Web and mobile developer -
+			<a href="http://uk.clicandwalk.com/" title="Clic and Walk's website" target="_blank">Clic and Walk / Infuze</a> -
+			Lille, France
+		</li>
+	</ul>
 
-                <h2>Work</h2>
-                <ul class="no-bullet">
-                    <li><b>November 2016 - Today</b><br/>Senior creative developer - Freelance - Remote</li>
-                    <li><b>May 2015 - November 2016</b><br/>Senior creative developer - <a href="http://bannerboy.com" title="Bannerboy" target="_blank">Bannerboy</a> - Stockholm, Sweden</li>
-                    <li><b>Summer 2014</b><br/>iOS developer - <a href="http://b-i.com" title="Blue Infinity's website" target="_blank">Blue Infinity</a> - Geneva, Switzerland</li>
-                    <li><b>2012-2014</b><br/>Digital designer and producer - <a href="http://laturbine-sciences.fr" title="La Turbine's website" target="_blank">La Turbine</a> - Annecy, France</li>
-                    <li><b>2011-2012</b><br/>Web and mobile developer - <a href="http://uk.clicandwalk.com/" title="Clic and Walk's website" target="_blank">Clic and Walk / Infuze</a> - Lille, France</li>
-                </ul>
+	<h2>Studies</h2>
+	<ul class="no-bullet">
+		<li><b>2012-2014</b><br />Digital design and production - Gobelins (Work/Study program)</li>
+		<li><b>2010-2012</b><br />Multimedia and internet degree - Laval's Institute of Technology</li>
+	</ul>
 
-                <h2>Studies</h2>
-                <ul class="no-bullet">
-                    <li><b>2012-2014</b><br/>Digital design and production - Gobelins (Work/Study program)</li>
-                    <li><b>2010-2012</b><br/>Multimedia and internet degree - Laval's Institute of Technology</li>
-                </ul>
-
-                <p class="center space"><a href="axelrock.pdf" target="_blank" class="action">PDF Version</a></p>
-            </section>
+	<p class="center space"><a href="axelrock.pdf" target="_blank" class="action">PDF Version</a></p>
+</section>
 
 {% include footer.html %}
