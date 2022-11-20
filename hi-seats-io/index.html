@@ -2,20 +2,22 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<title>👋 Hello, Seats.io!</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollToPlugin.min.js"></script>
 		<script type="module" src="./js/main.js" defer></script>
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
 	<body>
 		<!-- <header></header> -->
-		<section class="center">
+		<section id="welcome" class="center">
 			<p>Hello Pablo, Matti, Joren and Ben.</p>
 			<h1 class="rainbow">Welcome</h1>
 			<p>I'm <b>Axel</b>, a Creative Developer from France.<br />Let me introduce myself as fast as possible.</p>
 		</section>
 
-		<section>
+		<section id="summary">
 			<div>
 				<h2>I do front-end…</h2>
 
@@ -35,13 +37,53 @@
 				</p>
 
 				<p>
-					<a href="https://attaboy.io/f/axel-rock" target="_blank" class="rainbow">Here is a link to this website</a>,
-					and some banners I created over the years.
+					<a id="attaboy-link" href="https://attaboy.io/f/axel-rock" target="_blank" class="rainbow"
+						>Here is a link to this website</a
+					>, and some banners I created over the years.
 				</p>
 			</div>
 		</section>
 
-		<section>
+		<section id="skills">
+			<h2>Tech I use daily</h2>
+			<details id="js" open>
+				<summary>JavaScript</summary>
+				<p>
+					This is my main tool for everything. I love it. I use it alongside GSAP for animation, with Canvas for pixel
+					manipulation...
+				</p>
+			</details>
+			<details id="node">
+				<summary>Node JS</summary>
+				<p>
+					My favourite thing is to solve problems. I love to automate any repetitive task. Node is currently my go to
+					tool for that.
+				</p>
+			</details>
+			<details id="photoshop">
+				<summary>Photoshop</summary>
+				<p>
+					I spend a lot of time in visual creation softwares, including Figma, all Adobe Suite, video editing tools. But
+					Photoshop is the standard in the advertising industry, I use it for several hours a day.
+				</p>
+			</details>
+
+			<h2>Things I learn on my side project</h2>
+
+			<details id="observers">
+				<summary>Web Components / Observers</summary>
+				<p>Create reusable, native and efficient components with the smallest impact on CPU.</p>
+			</details>
+			<details id="service-worker">
+				<summary>File System Access API / Service Worker / IndexedDB</summary>
+				<p>
+					I used these to create better experience, by creating something close to a local server, in the browser,
+					bypassing some limitations of iframes, and to turn a website into a real local software.
+				</p>
+			</details>
+		</section>
+
+		<section id="why-seats-dot-io">
 			<div>
 				<h2>Why am I getting in touch?</h2>
 
@@ -72,7 +114,7 @@
 			</div>
 		</section>
 
-		<section class="center">
+		<section id="contact" class="center">
 			<div>
 				<h2>Still there?</h2>
 				<p class="center">That means you might want to know more.</p>
@@ -94,7 +136,7 @@
 							class="no-decoration"
 							target="_blank"
 							title="Follow me on Instagram"
-							href="https://instagram.com/{{ site.contact.instagram }}/"
+							href="https://instagram.com/axel.rock/"
 						>
 							<span class="link">Instagram</span><br />
 							@axel.rock
@@ -137,6 +179,8 @@
 				</ul>
 			</div>
 		</section>
+
+		<audio src="voiceOver.m4a" controls></audio>
 
 		<footer>
 			<label for="theme-selector">Theme:</label>

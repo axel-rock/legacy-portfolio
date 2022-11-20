@@ -15,7 +15,8 @@ body {
 	scroll-snap-type: proximity;
 	scroll-snap-points-y: repeat(100vh);
 	scroll-snap-type: y proximity;
-	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 /* main {
@@ -27,12 +28,22 @@ body {
 	display: contents;
 } */
 
+audio {
+	position: fixed;
+	left: 0;
+	margin-left: -50%;
+	right: 0;
+	margin: auto;
+	bottom: 2em;
+}
+
 section {
 	scroll-snap-align: start;
 	font-size: clamp(1rem, 4vw, 1.5rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	height: max-content;
 	min-height: 100vh;
 	border-top: solid var(--line-width) var(--color-7);
 }
@@ -59,15 +70,47 @@ h1,
 h2,
 h3,
 p,
-ul {
+ul,
+details {
 	max-width: max(66ch, 100vh);
 	justify-self: center;
+}
+
+#skills {
+	justify-content: flex-start;
+}
+
+details {
+	width: 100%;
+}
+
+details p {
+	font-weight: 300;
+}
+
+details > summary {
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+
+details + details {
+	margin-top: 1em;
+}
+
+details:not([open]) + details {
+	margin-top: 0em;
+}
+
+details:last-child {
+	margin-bottom: 1em;
 }
 
 footer {
 	display: flex;
 	align-items: baseline;
 	gap: 1em;
+
+	height: 10em;
 	padding: 1em 0;
 	scroll-snap-align: end;
 }
